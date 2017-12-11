@@ -33,3 +33,7 @@ li a {
 li a:hover {
     background-color: red;
 }
+
+footer {
+	text-align: center;
+}
