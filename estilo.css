@@ -1,0 +1,9 @@
+* {
+ color: blue;
+ background-image: url("scream.jpg");
+}
+
+img {
+display:block;
+margin:auto;
+}
