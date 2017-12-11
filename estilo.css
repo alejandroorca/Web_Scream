@@ -8,6 +8,10 @@ display:block;
 margin:auto;
 }
 
+header {
+  width: 100%;
+}
+
 nav {
   top: -20px;
   position: absolute;
@@ -115,4 +119,3 @@ nav ul li a .cuarto {
 nav ul li a .quinto {
   background: #37a4d9;
 }
-
