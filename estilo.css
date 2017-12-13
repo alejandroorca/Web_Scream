@@ -2,6 +2,7 @@ body {
  color: blue;
  background-image: url("scream.jpg");
  text-align:center;
+background-repeat: no-repeat;	
 }
 
 img {
