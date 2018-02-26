@@ -2,8 +2,7 @@
 
 import sys
 
-a = int(sys.argv[1])
-b = int(sys.argv[2])
+
 
 list = []
 
@@ -16,6 +15,8 @@ def lista(a,b):
     print(list[0], list[1])
     print(media, media1)
     return 0
+a = int(sys.argv[1])
+b = int(sys.argv[2])
 print(lista(a, b))
 print(lista(b,a))
 print(lista(52,4))

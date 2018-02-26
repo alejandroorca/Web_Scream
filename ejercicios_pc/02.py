@@ -2,15 +2,15 @@
 
 import sys
 
-a = sys.argv[1]
-b = sys.argv[2]
-
 def maximo(num):
 	if a > b:
 		print(a)
 	else:
 		print(b)
 	return 0
+
+a = sys.argv[1]
+b = sys.argv[2]
 
 print(maximo(a))
 print(maximo(b))

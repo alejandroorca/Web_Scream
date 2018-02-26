@@ -12,7 +12,7 @@ def booleano(num):
 		print('El número es par')
 	else:
 		print('El número no es par')
-	return 0
+	return mod
 
 print(booleano(2))
 
