@@ -19,7 +19,7 @@ def listaa(lista[0],lista[2]):
 
      lista_media.append(media)
      lista_media.append(media1)
-     return 0
+     return lista
 
      print(lista(lista[1], 45))
 	
