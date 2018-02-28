@@ -2,16 +2,21 @@
 
 import sys
 
-def maximo(num):
+def maximoo(a,b):
 	if a > b:
-		print(a)
+		maximo = True
 	else:
-		print(b)
-	return 0
+		maximo = False
+	return maximo
 
-a = sys.argv[1]
-b = sys.argv[2]
+a = int(sys.argv[1])
+b = int(sys.argv[2])
 
-print(maximo(a))
-print(maximo(b))
-print(maximo(a))
+x = maximoo(a,b)
+
+if x == True:
+	print(a)
+else:
+	print(b)
+
+	

@@ -7,16 +7,16 @@ import sys
 
 def booleano(num):
 	mod = num % 2
-
 	if mod == 0:
-		print('El número es par')
+		es_par = True
 	else:
-		print('El número no es par')
-	return mod
-
-print(booleano(2))
-
-print(booleano(78))
+		es_par = False
+	return es_par
 
 
-print(booleano(4))
+result = booleano(int(sys.argv[1]))
+
+if result == True:
+	print('Es par')
+else:
+	print('No es par')

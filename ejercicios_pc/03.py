@@ -2,21 +2,17 @@
 
 import sys
 
-
-
-list = []
-
 def lista(a,b):
+    list = []
     list.append(a)
     list.append(b)
     orden = sorted(list)
-    media = a / 2
-    media1  = b / 2
-    print(list[0], list[1])
-    print(media, media1)
-    return 0
+    media = (a + b)/2
+    list.append(media)
+    return list
+
 a = int(sys.argv[1])
 b = int(sys.argv[2])
-print(lista(a, b))
-print(lista(b,a))
-print(lista(52,4))
+
+mi_lista = lista(a,b)
+print(mi_lista)
