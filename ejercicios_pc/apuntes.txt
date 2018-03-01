@@ -1,0 +1,772 @@
+#  This is a comment
+
+'''
+   This is a comment
+   on multiple lines
+'''
+
+#  VARIABLES
+#
+#  A variable is a symbol that represents a quantity that may vary.
+#
+#  identifier = value;
+
+age = 25        # The value 25 is assigned to variable age
+
+
+
+#  BASIC DATA TYPES
+sea_level = 25                            # Integer (entero) int
+temperature = -3.82                       # Real number (número real) float
+name = 'Nacho López'                      # String (cadena de caracteres) string
+has_car = True                            # Boolean (only two values: True or False) True es 1 o False es 0 bool
+
+
+
+#  ARITHMETIC OPERATIONS WITH NUMBERS
+x = 5
+y = 2
+
+z = x + y          # Addition.                                     Result: 7.
+z = x - y          # Subtraction.                                  Result: 3.
+z = x * y          # Multiplication.                               Result: 10.
+z = x / y          # Division.                                     Result: 2.5.
+z = x % y          # Modulo (remainder of the integer division).   Result: 1. (El módulo te da el resto de la división entera)
+z = a // b         # Muestra el modulo 
+
+z = z + 1          # Increase the value of z by 1.                 Result: 2.
+z = z - 1          # Decrease the value of z by 1.                 Result: 1.
+
+z = 50 - x * 6 / -0.5          #
+z = (50 - x) * 6 / -0.5        # The order of operations is as in mathematics
+z = (50 - x * 6) / -0.5        #
+
+z = 2 * z + 3                  # Remember: the symbol = assigns a value to the variable
+
+
+
+#  BASIC OPERATIONS WITH STRINGS
+a = 'GNU/'
+b = 'Linux'
+c = a + b                                      # Concatenation     Result: 'GNU/Linux'.
+c = a * 3                                      # Repetition        Result: 'GNU/GNU/GNU/'.
+
+
+
+#  PRINT VARIABLES ON SCREEN
+
+print('Hello, world!')                   # Prints on screen: Hello, world!
+print(x)                                 # Prints the variable x
+
+#  You can print on screen strings and variables
+print('I have bought', x, 'oranges and', y, 'lemons.')
+
+
+
+#  DATA TYPE CONVERSION
+
+height = '95.4'
+print(type(height))                          # Prints the current data type 
+height = float(height)                       # Convert a string to a real number
+print(type(height))
+
+altitude = -544.432
+print(type(altitude))
+altitude = str(altitude)                     # Convert a real number to string
+print(type(altitude))
+
+
+
+
+# LISTS
+#
+# A list is a data structure consisting of a collection of elements (values or variables)
+
+food = ['oranges', 'strawberries', 'lemons']
+
+x = food[0]      # The first element is at index 0
+y = food[1]      # The second element is at index 1
+z = food[2]      # The third element is at index 2
+
+print('I like', x, ', ', y, ', and', z)
+
+
+
+# COUNT ELEMENTS IN A LIST
+
+fruits = ['Apple', 'Banana', 'Watermelon', 'Peach', ' Nectarine']
+num_fruits = len(fruits)     # The variable 'num_fruits' is 5 (the number of elements of the array 'fruits')
+print(num_fruits)
+
+
+
+# MODIFY A LIST ELEMENT
+
+ages = [43, 72, 32, 22, 65]
+
+ages[3] = 57                    # Modify the element at index 3. Result: [43, 72, 32, 57, 65]
+ages[0] = 6                     # Modify the first element.      Result: [6, 72, 32, 57, 65]
+ages[-1] = 12                   # Modify the last element.       Result: [6, 72, 32, 57, 12]
+
+print(ages)
+
+
+
+# ADD AN ELEMENT TO A LIST
+
+names = ['Nacho', 'David', 'Lola']
+
+names.insert(2, 'Alba')          # Add 'Alba' at index 2.         Result: ['Nacho', 'David', 'Alba', 'Lola']
+names.insert(0, 'Álvaro')        # Add 'Álvaro' at the beginning. Result: ['Álvaro', 'Nacho', 'David', 'Alba', 'Lola']
+names.append('Marta')            # Add 'Marta' at the end.        Result: ['Álvaro', 'Nacho', 'David', 'Alba', 'Lola', 'Marta']
+
+print(names);
+
+
+
+# REMOVE A LIST ELEMENT
+
+colours = ['Blue', 'Orange', 'Green', 'Yellow', 'White']
+
+colours.pop(2)                  # Remove the element at index 2. Result: ['Blue', 'Orange', 'Yellow', 'White']
+colours.pop(0)                  # Remove the first element.      Result: ['Orange', 'Yellow', 'White']
+colours.pop()                   # Remove the last element.       Result: ['Orange', 'Yellow']
+
+print(colours)
+
+
+
+# SUBARRAYS [start:end]
+
+vegetables = ['Onions', 'Tomatoes', 'Spinach', 'Eggplants', 'Radishes']
+
+veg1 = vegetables[:]                         # Result: ['Onions', 'Tomatoes', 'Spinach', 'Eggplants', 'Radishes']
+veg2 = vegetables[2:]                        # Result: ['Spinach', 'Eggplants', 'Radishes']
+veg3 = vegetables[2:4]                       # Result: ['Spinach', 'Eggplants']
+veg4 = vegetables[-3:-2]                     # Result: ['Spinach']
+
+
+
+# REVERSE ELEMENTS IN A LIST
+
+numbers = [4, 5.6, -2.4, 20]
+animals = ['Dog', 'Whale', 'Cat', 'Fox']
+
+numbers_reversed = numbers[::-1]
+animals_reversed = animals[::-1]
+
+print(numbers_reversed)
+print(animals_reversed)
+
+
+
+# SORT ELEMENTS IN A LIST
+
+numbers_sorted = sorted(numbers)
+
+animals_sorted = sorted(animals)
+
+print(numbers_sorted);
+print(animals_sorted);
+
+
+
+# MULTIDIMENSIONAL LISTS
+
+a = [8, 1]
+b = [3, 5, 7, 6]
+c = [4, [10, 9], 2];
+
+multi = [a, b, c]
+
+d = multi[1][3]                              # Get the element at [1][3]. Variable 'd' is 6
+multi[2][1][0] = -1                          # Modify the element at index [2][1][0]
+print(multi)
+
+
+
+# CREATE EMPTY LISTS
+
+empty_1d_list = []                      # Create an empty list
+empty_2d_list = [[]]                    # Create an empty two-dimensional list
+empty_3d_list = [[[]]]                  # Create an empty three-dimensional list
+
+my_list = [[], []]
+my_list[0].append(2)
+my_list[0].append('Marta')
+my_list[1].append('Hi!')
+my_list[1].append(3.4)
+print(my_list)                          # Prints [[2, 'Marta'], ['Hi!', 3.4]]
+
+
+
+# STRINGS AS ARRAYS OF CHARACTERS - SUBSTRINGS
+
+phrase = 'Oranges are round, and oranges are juicy.'
+
+num_chars = len(phrase)                      # The number of characters of the string 'phrase'. Result: 41.
+
+p1 = phrase[23:]                             # Result: 'oranges are juicy.'
+p2 = phrase[12:17]                           # Result: 'round'
+p3 = phrase[-6:-1]                           # Result: 'juicy'
+p4 = phrase[17:18]                           # Result: ','
+p5 = phrase[-1:]                             # Result: '.'
+
+
+#  CONDITIONALS
+
+
+# COMPARISON OPERATORS
+
+a = 5
+b = 3
+
+z = a == b     # Equal to                           Result: False
+z = a != b     # Not equal to                       Result: True
+z = a >  b     # Greater than                       Result: True
+z = a >= b     # Greater than or equal to           Result: True
+z = a <  b     # Less than                          Result: False
+z = a <= b     # Less than or equal to              Result: False
+
+# You can compare two strings too. For example, check: 'Patricia' == 'Patricia'  --> True
+
+
+
+# LOGICAL OPERATORS
+
+f = False
+t = True
+
+# Operator AND (and)
+z = f and f        # Result: False          (False and False) --> False
+z = f and t        # Result: False          (False and True)  --> False
+z = t and f        # Result: False          (True  and False) --> False
+z = t and t        # Result: True           (True  and True)  --> True
+
+# Operator OR (or)
+z = f or f         # Result: False          (False or False) --> False
+z = f or t         # Result: True           (False or True)  --> True
+z = t or f         # Result: True           (True  or False) --> True
+z = t or t         # Result: True           (True  or True)  --> True
+
+# Operator NOT (not)
+z = not(f)         # Result: True           !(False) --> True
+z = not(t)         # Result: False          !(True)  --> False
+
+
+
+# COMBINATION OF COMPARISON AND LOGICAL OPERATORS
+
+a = 5
+b = 3
+
+z = not(a == b) or (a >= b and a != b)              # Result: True
+
+
+
+# DECISIONS WITH IF
+
+number = 7
+age = 30
+mark = 9.5
+                                                    # Hay que dejar cuatro espacios 
+greater_than_zero = number > 0                      # Result: true
+
+if greater_than_zero:                               # If statament
+    print('The number is positive.')                # Execute this only if variable 'greater_than_zero' is true
+
+
+if number > 0:                                      # If statament (popular alternative)
+    print('The number is positive.')
+
+
+if age >= 18:                                       # If-else statament
+    print('You are of legal age.')
+else:
+    print('You are not of legal age.')
+
+
+if mark < 5:                                        # If-else-if statament
+    print('Fail.')
+elif mark >= 5 and mark < 7:
+    print('Pass.')
+elif mark >= 7 and mark < 9:
+    print('Remarkable.')
+else:
+    print('Excellent.')
+
+
+
+
+# DATA TYPE IDENTIFICATION
+
+i = -4
+j = 6.37
+k = 'Hello'
+l = True
+m = [3.3, 'World', -1.3, False]
+
+is_int = isinstance(i, int)         # Check if variable 'i' is an integer.      Result: True
+is_float = isinstance(j, float)     # Check if variable 'j' is a real number.   Result: True
+is_str = isinstance(k, str)         # Check if variable 'k' is a string.        Result: True
+is_bool = isinstance(l, bool)       # Check if variable 'l' is a Boolean.       Result: True
+is_list = isinstance(m, list)       # Check if variable 'm' is a list.          Result: True
+
+
+
+# EXAMPLE 1 (NESTED IFS): program to check if the input year is a leap year or not
+
+year = 2000
+
+if year % 4 == 0:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print(year, 'is a leap year.')
+        else:
+            print(year, 'is not a leap year.')
+    else:
+        print(year, 'is a leap year.')
+else:
+    print(year, 'is not a leap year.')
+
+
+
+
+
+# EXAMPLE 2: converter from Fahrenheit to Celsius and vice versa
+
+temperature = '113.0F'
+
+unit = temperature[-1:]
+value = float(temperature[:-1])
+
+if unit == 'C' or unit == 'c':
+    fahrenheit = (value * 1.8) + 32
+    print(str(fahrenheit) + ' ºF')
+if unit == 'F' or unit == 'f':
+    celcius = (value - 32) / 1.8
+    print(str(celcius) + ' ºC')
+
+
+
+
+# LOOPS
+# range(10) range(2,10) range(2,10,2) El tercer número indica la cuenta y el final colocado se le resta uno
+
+
+print('CLASSICAL LOOP')  # CLASSICAL LOOP
+
+for i in range(10):
+    print('i:', i)
+
+
+
+
+print('\nCLASSICAL LOOP WITH ARRAYS')  # CLASSICAL LOOP WITH ARRAYS
+
+numbers = [-3.2, 5.3, 3, 1]
+
+for i in range(len(numbers)):
+    print(numbers[i])
+
+
+
+
+print('\nREVERSE LOOP')  # REVERSE LOOP
+
+for i in range(5, -1, -1):
+    print('i:', i)
+
+
+
+
+print('\nNESTED LOOP')  # NESTED LOOP
+
+for i in range(3):
+    print('i:', i)
+    for j in range(2, 0, -1):
+        print('j:', j)
+        for k in range(2):
+            print('k:', k)
+
+
+
+
+
+
+print('\nITERATOR LOOP')  # ITERATOR LOOP
+
+colors = ['red', 'green', 'blue', 'yellow']
+
+for color in colors:
+    print(color)
+
+
+
+
+print('\nWHILE LOOP')  # WHILE LOOP
+
+i = 0
+while i <= 3:
+    i = i + 1
+    print('Hello', i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print('\nEXAMPLE 1 (SUMMATION): sum up all the elements of an array') # EXAMPLE 1
+
+my_array = [-4.3, 2, -0.7, 1.5, 3.5]
+total_sum = 0
+
+for i in range(len(my_array)):
+    total_sum = total_sum + my_array[i]
+
+
+print('The sum of all the elements of the array is', total_sum, '\n')
+
+
+
+print('\nEXAMPLE 2 (PRODUCT): multiply all the elements of an array') # EXAMPLE 2
+
+my_array = [3, 2, -1, 1, 4]
+prod = 1
+
+for i in range(len(my_array)):
+    prod = prod * my_array[i]
+
+
+print('The multiplication of all the elements of the array is', prod, '\n')
+
+# EJERCICIOS
+
+''''
+01. Crea un programa que:
+
+    Sume todos los elementos (de tipo numérico) de un array, o lista, mediante un bucle.
+    Multiplique todos los elementos (de tipo numérico) de un array, o lista, mediante un bucle.
+''''
+a = [1,2,3,4]
+b = len(a)
+c = 0
+d = 1
+for i in range(b):
+	c = c + a[i]
+	d = a[i] * d
+
+
+print (c)
+print (d)
+
+# 02. Genera una tabla de multiplicar, del 1 al 10, de un número entero dado.
+import sys
+
+a = int(sys.argv[1])
+
+
+for i in range(11):
+
+    multiplicacion = a * i
+
+    print(multiplicacion)
+
+#03. Imprime en pantalla, solo usando un bucle, todos los números del 0 al 99 excepto el 3, el 6 y el 11.
+
+for i in range(100):
+	if i != 3 and i != 6 and i != 11:
+		print(i)
+
+#04. Multiplica todos los números impares existentes desde 1 hasta un número dado.
+
+import sys
+
+a = int(sys.argv[1])
+
+for i in range(0, a, 1):
+	compr = i % 2
+	if compr == 1:
+		multiplicacion = i * 1
+		print(multiplicacion)
+
+#05. Suma todos los dígitos de un número dado.
+
+import sys
+
+a = sys.argv[1]
+
+suma = 0
+
+lista = []
+
+for i in range(len(a)):
+    pos = a[i]
+    pos= int(pos)
+    suma = pos + suma
+    
+print(suma)
+
+#06. Imprime en pantalla si un número dado, mayor o igual a 2, es primo o no. Un número es primo si solo se puede dividir por 1 y por sí mismo.
+import sys
+
+a = int(sys.argv[1])
+c = 0
+
+for i in range(1, (a+1)):
+	if (a%i) == 0:
+		c = c + 1
+
+if c == 2:
+	print('Este numero es primo')
+else:
+	print('Este numero NO es primo')
+
+# 07. Imprime en pantalla todos los números primos desde el 2, incluído, hasta un número dado.
+import sys
+
+a = int(sys.argv[1])
+print(2)
+for i in range(1, a+1, 2):
+    c = 0
+    for j in range(1, (i+1)):
+        if i%j == 0:
+            c = c + 1
+    if c == 2:
+        x = 0
+        print(i)
+
+
+#8. Imprime en pantalla, solo usando un bucle, el siguiente patrón:
+#
+#1
+#22
+#333
+#4444
+#55555
+#666666
+#7777777
+#88888888
+#999999999
+
+#Luego, imprime en pantalla, usando solo dos bucles, el siguiente patrón:
+
+#*
+#* *
+#* * *
+#* * * *
+#* * * * *
+#* * * *
+#* * *
+#* *
+#*
+
+simbolo = '*'
+
+for i in range(10):
+	j = str(i)
+	multiplicacion = j * i
+	print (multiplicacion)
+	
+for i in range(5):
+		multi = i * simbolo
+		print(multi)
+		
+for i in range(5, 0, -1):
+    multi = i * simbolo
+		    
+    print(multi)
+		
+		
+# 09. Imprime los números que sean divisibles por 7 y por 5 entre el rango 1500 y 2700 (ambos incluidos). Pista: usar el operador %.
+
+for i in range(1500, 2700):
+	mod = i % 5
+	mod1 = i % 7
+	if mod == 0 and mod1 == 0:
+		print(i)
+
+#10. Muestra en pantalla el número de ocurrencias de cada dígito en un número entero. Por ejemplo, para el número entero 116242320 imprimir que hay 2 unos, 3 doses, etc.
+import sys
+
+a = sys.argv[1]
+
+contador = [0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0]
+
+for i in range(len(a)):
+	posicion = a[i]
+	if posicion == '0':
+		contador[0] = contador[0] + 1
+	if posicion == '1':
+		contador[1] = contador[1] + 1
+	if posicion == '2':
+		contador[2] = contador[2] + 1
+	if posicion == '3':
+		contador[3] = contador[3] + 1
+	if posicion == '4':
+		contador[4] = contador[4] + 1
+	if posicion == '5':
+		contador[5] = contador[5] + 1
+	if posicion == '6':
+		contador[6] = contador[6] + 1
+	if posicion == '7':
+		contador[7] = contador[7] + 1
+	if posicion == '8':
+		contador[8] = contador[8] + 1
+	if posicion == '9':
+		contador[9] = contador[9] + 1
+print ('El número 0 aparece', contador[0] ,'veces')
+print ('El número 1 aparece', contador[1] ,'veces')
+print ('El número 2 aparece', contador[2] ,'veces')
+print ('El número 3 aparece', contador[3] ,'veces')
+print ('El número 4 aparece', contador[4] ,'veces')
+print ('El número 5 aparece', contador[5] ,'veces')
+print ('El número 6 aparece', contador[6] ,'veces')
+print ('El número 7 aparece', contador[7] ,'veces')
+print ('El número 8 aparece', contador[8] ,'veces')
+print ('El número 9 aparece', contador[9] ,'veces')
+
+#11. Muestra la suma de los dígitos de 2n, siendo n un número natural.
+import sys
+
+a = int(sys.argv[1])
+
+a = 2**a
+a = str(a)
+a = [a]
+
+c = 0
+
+for i in range(len(a[0])):
+	c = c + int(a[0][i])
+
+print(c)
+
+#12. Determina si los enteros dados están aumentando constantemente.
+
+import sys
+
+#Recogemos datos y eliminamos el nombre del archivo
+a = sys.argv
+a.pop(0)
+
+#Definimos contadores
+b = True
+
+#Empezando por elemento 1 y acabando en el -1
+for i in range(len(a)-1):
+	#Comprobamos que mientras b=True, los elementos sean crecientes
+	if int(a[i+1]) > int(a[i]) and b == True:
+		b = True
+	else:
+		b = False
+
+#Comprobamos
+if b == True:
+	print('Si')
+else:
+	print('No')
+
+# 13. Devuelve el entero más grande adyacente a un cero.
+import sys
+
+a = sys.argv
+a.pop(0)
+a.insert(0, -float("inf"))
+a.append(-float("inf"))
+
+b = 0
+c = 0
+
+d = -float("inf")
+e = -float("inf")
+
+for i in range(len(a)):
+	if a[i] == '0':
+		b = float(a[i-1])
+		c = float(a[i+1])
+		if b > d and b >= c:
+			d = int(b)
+		elif c > e and c > b:
+			e = int(c)
+
+if d > e:
+	print(d)
+else:
+	print(e)
+
+#14. Muestra los dígitos, ordenados de menor a mayor, que aparecen exactamente tres veces.
+import sys
+
+a = sys.argv[1]
+
+b = []
+
+for i in range(len(a)):
+    c = 0
+    for j in range(len(a)):
+        if a[i] == a[j]:
+            c = c + 1
+    if c == 3:
+        b.append(a[i])
+
+b_sorted = sorted(b)
+b_sorted.append('')
+
+for i in range(len(b)):
+    if b_sorted[i] != b_sorted[i+1]:
+        print(b_sorted[i])
+
+# 15. Muestra los enteros, ordenados de menor a mayor, que aparecen exactamente tres veces.
+import sys
+
+a = sys.argv
+a.pop(0)
+
+
+b = []
+
+for i in range(len(a)):
+    c = 0
+#   if int(a[i]) > 0:
+    for j in range(len(a)):
+        if a[i] == a[j]:
+            c = c + 1
+    if c == 3:
+        b.append(int(a[i]))
+
+bsorted = sorted(b)
+bsorted.append('')
+
+for i in range(len(b)):
+    if bsorted[i] != bsorted[i+1]:
+        print(bsorted[i])
+
+# Números primos
+
+import sys
+
+a = int(sys.argv[1])
+x = 0
+
+for i in range(2, a):
+    c = True
+    j = 2
+    while j < i:
+        if i%j == 0:
+            c = False
+            j = i
+        else:
+            j = j+1
+
+    if c == True:
+        x = x+1
+        print(i)
