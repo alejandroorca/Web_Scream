@@ -8,12 +8,12 @@ def lista_loca(a,b):
 	for i in range(len(b)):
 		pos = a[i]
 		pos1 = b[i]
-		conv = int(pos1)
+		conv = float(pos1)
 		listaf.append(pos)
 		listaf.append(conv)
 	return listaf
 
 a = ['hola', 'qué', 'tal']
-b = ['3', '6', '-4']
+b = ['3', '6', '-4.5']
 
 print(lista_loca(a,b))
