@@ -1,4 +1,24 @@
-'''
- 10. Crea una función que reciba un parámetro de entrada de tipo numérico que tenga más de 10 dígitos (la función devolverá 0 si el número tiene 10 o menos dígitos) y que devuelva como salida los 5 dígitos consecutivos con mayor suma. 
- Por ejemplo, la función devolverá 97798 si la entrada es 145436803497798443. Ejecuta 3 llamadas de ejemplo de la función creada.
- '''
+def holaa(x):
+	x = str(x)
+	a = 0
+	if len(x) < 10:
+		b = 0
+	else:
+		for i in range(len(x)):
+			c = 0
+			if i < len(x) - 5:
+				h = []
+				for j in range(i, i + 5):
+					c = c + int(x[j])
+					h.append(x[j])
+					if a < c:
+						a = c
+						b = h
+	return b
+                
+
+
+
+print(holaa(145436803497798443))
+print(holaa(145443))
+print(holaa(111111111111111211))

@@ -770,3 +770,261 @@ for i in range(2, a):
     if c == True:
         x = x+1
         print(i)
+
+
+# FUNCIONES
+
+#01. Crea una función que reciba un parámetro de entrada de tipo numérico y que devuelva un booleano con valor true si el número es par y false si es impar. Ejecuta 3 llamadas de ejemplo de la función creada.
+
+
+import sys
+
+
+
+def booleano(num):
+	mod = num % 2
+	if mod == 0:
+		es_par = True
+	else:
+		es_par = False
+	return es_par
+
+
+result = booleano(int(sys.argv[1]))
+
+if result == True:
+	print('Es par')
+else:
+	print('No es par')
+
+
+# 02. Crea una función que reciba dos parámetros de entrada de tipo númerico y que devuelva el máximo. Ejecuta 3 llamadas de ejemplo de la función creada.
+
+import sys
+
+def maximoo(a,b):
+	if a > b:
+		maximo = True
+	else:
+		maximo = False
+	return maximo
+
+a = int(sys.argv[1])
+b = int(sys.argv[2])
+
+x = maximoo(a,b)
+
+if x == True:
+	print(a)
+else:
+	print(b)
+
+	
+# 03. Crea una función que reciba dos parámetros de entrada de tipo númerico y que devuelva un array, o lista, con el máximo, el mínimo y la media de esos dos números. Ejecuta 3 llamadas de ejemplo de la función creada.
+
+import sys
+
+def lista(a,b):
+    list = []
+    list.append(a)
+    list.append(b)
+    orden = sorted(list)
+    media = (a + b)/2
+    list.append(media)
+    return list
+
+a = int(sys.argv[1])
+b = int(sys.argv[2])
+
+mi_lista = lista(a,b)
+print(mi_lista)
+
+# 04. Crea una función que reciba un parámetro de entrada de tipo array, o lista, de tipo numérico y que devuelva un array, o lista, 
+#con la media y con otro array, o lista, con los números ordenados de mayor a menor. Ejecuta 3 llamadas de ejemplo de la función creada.
+
+def cuarto(c):
+	lista = []
+	suma = 0
+	for i in range(len(c)):
+		pos = c[i]
+		lista.append(int(pos))
+		lista_sorted = sorted(lista)
+		lista_reverse = lista_sorted[::-1]
+		total = int(len(c))
+		suma = int(pos) + suma 
+		media = suma / total
+		listaf = [media, lista_reverse]
+	return listaf 
+
+c = sys.argv[1:]
+
+print(cuarto(c))
+
+# 05.  Crea una función que reciba un parámetro de entrada de tipo numérico y que devuelva un array, o lista, con todos los dígitos de ese número. Por ejemplo, la función devolverá [3, 4, 4] si la entrada es 344.
+# Ejecuta 3 llamadas de ejemplo de la función creada.
+
+import sys
+
+def cuenta(a):
+	lista = []
+	for i in range(len(a)):
+		pos = a[i]
+		conv = int(pos)
+		lista.append(conv)
+	return lista
+
+
+a = sys.argv[1]
+
+print(cuenta(a))
+
+# 06. Crea una función que actúe como una calculadora simple. Para ello, la función recibirá tres parámetros de entrada, dos de tipo numérico para los valores y un string o cadena de caracteres para la operación (+, -, * o /). La función 
+#devolverá el resultado de la operación elegida entre esos dos números. Ejecuta 3 llamadas de ejemplo de la función creada.
+
+import sys
+
+def calculadora(a,b,c):
+	if c == '+':
+		suma = a + b
+		resultado = suma
+	if c == '-':
+		resta = a - b
+		resultado = resta
+	if c == '*':
+		multi = a * b
+		resultado = multi
+	if c == '/':
+		division = a / b
+		resultado = division
+	return resultado
+
+a = int(sys.argv[1])
+b = int(sys.argv[2])
+c = sys.argv[3]
+
+print(calculadora(a,b,c))
+
+
+# 07. Crea una función que reciba dos parámetros de entrada de tipo array, o lista, una de ellas de tipo string o cadena de caracteres y la otra de tipo numérico y que devuelva un array, o lista, donde se combine los dos array, o listas,
+# alternativamente. Por ejemplo, la función devolverá ['hola', 3, 'qué', 6, 'tal', -4.5] si las entradas son ['hola', 'qué', 'tal'] y [3, 6, -4.5]. Ejecuta 3 llamadas de ejemplo de la función creada.
+
+import sys
+
+def lista_loca(a,b):
+	listaf = []
+	for i in range(len(b)):
+		pos = a[i]
+		pos1 = b[i]
+		conv = float(pos1)
+		listaf.append(pos)
+		listaf.append(conv)
+	return listaf
+
+x = ['hola', 'qué', 'tal']
+y = ['3', '6', '-4.5']
+
+c = sys.argv[1:]
+
+a = []
+b = []
+
+for i in range(len(c)):
+	pos = c[i]
+	total = int(len(c))
+	media = (total / 2)   
+	if i < media:
+		a.append(pos)
+	else:
+		b.append(pos)
+
+print(lista_loca(a,b))
+print(lista_loca(x,y))
+
+
+# 08. Crea una función que reciba un parámetro de entrada de tipo numérico que sea mayor que 5 (la función devolverá 0 si el número es 5 o más pequeño) y que devuelva la suma de todos los números desde 1 hasta n sin contar con los elementos 
+# n - 1 ni n - 3. Por ejemplo, la función devolverá 24 si la entrada es 8. Ejecuta 3 llamadas de ejemplo de la función creada.
+
+import sys
+
+def funcion(a):
+	suma = 0
+	if a >= 5:
+		for i in range(a+1):
+			if i != (a - 1) and i != (a - 3):
+				suma = i + suma
+				valor = suma 
+	else:
+		valor = 0
+
+	return valor
+
+a = int(sys.argv[1])
+
+print(funcion(a))
+
+# act. recuadrao
+
+def asterisco(x): # Esta funcion imprime tan solo * multiplicado por X ( donde X será la longitud mas larga de caracteres )
+    a = "*" * x
+    return a
+
+def lista(x): # Esta funcion me va a dar la longitud mas larga de caracteres y le sumo 4 ( para el * inicial y final mas espacios )
+    c = 0 #contador
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            if c < len(x[i]):
+                c = len(x[i])
+    c = c + 4
+    return c
+
+def prin(x): # Este es el cuerpo del programa. LLama a las otras funciones e imprime en pantalla
+    d = lista(x) #Recojo el tamaño mas largo de caracteres de los arrays ejemplo ray1[]
+    print(asterisco(d))
+
+    for i in range(len(x)):
+        if len(x[i]) + 4  < d:
+            e = d - len(x[i])
+            print("*", x[i], (" " * (e - 5)) ,"*")
+        else:
+            print("*", x[i], "*")
+
+    print(asterisco(d))
+    return " "
+
+
+
+ray1 = ["Me", "gusta", "la", "pizza", "margherita"]
+ray2 = ["Holaaaaaa", "me", "llamo", "Ralph"]
+ray3 = ["Uso muchas funciones", "así mola", "muchooo mas"]
+
+print(prin(ray1))
+print(prin(ray2))
+print(prin(ray3))
+
+
+# act. de los 5 mas grandes
+
+def holaa(x):
+	x = str(x)
+	a = 0
+	if len(x) < 10:
+		b = 0
+	else:
+		for i in range(len(x)):
+			c = 0
+			if i < len(x) - 5:
+				h = []
+				for j in range(i, i + 5):
+					c = c + int(x[j])
+					h.append(x[j])
+					if a < c:
+						a = c
+						b = h
+	return b
+                
+
+
+
+print(holaa(145436803497798443))
+print(holaa(145443))
+print(holaa(111111111111111211))

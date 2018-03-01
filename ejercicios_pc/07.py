@@ -13,7 +13,21 @@ def lista_loca(a,b):
 		listaf.append(conv)
 	return listaf
 
-a = ['hola', 'qué', 'tal']
-b = ['3', '6', '-4.5']
+x = ['hola', 'qué', 'tal']
+y = ['3', '6', '-4.5']
+
+c = sys.argv[1:]
+
+a = []
+b = []
+
+for i in range(len(c)):
+	pos = c[i]
+	total = int(len(c))
+	media = (total / 2)   
+	if i < media:
+		a.append(pos)
+	else:
+		b.append(pos)
 
 print(lista_loca(a,b))

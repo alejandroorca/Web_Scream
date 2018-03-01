@@ -7,7 +7,7 @@ margin-left: 14%;
 body {
 	width: 88%;
 	margin: 0 auto;
-	background-image: url("Assets/pictures/fondo-abstracto-de-luces-azules_1182-609.jpg");
+	background-image: url("Assets/cbf691f9d6a0dab6f642da1fff719aab_XL.jpg");
     color: black;
     text-align: justify;
 }
@@ -84,4 +84,8 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.centro {
+    text-align: center;
 }
