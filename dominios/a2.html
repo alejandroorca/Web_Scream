@@ -109,29 +109,30 @@
 
 <h2>Añadir equipos al dominio</h2>
 
-<p>$Domain = 'instituto.extremadura.es'</p>
+<p>$Domain = 'alorca.1a'</p>
 <p>$hostname = Read-Host -Prompt 'Nombre del equipo'</p>
 <p>Rename-Computer $hostname</p>
 <p>Add-computer -domainname $Domain -Credential instituto\gestor -newname $hostname -Restart</p>
 
 <h2>EXPLICACIÓN PASO A PASO</h2>
-<p>
-En una variable a la que hemos llamado "Domain" introducimos el nombre de nuestro dominio:
-$Domain = 'alorca.1a'
-En una variable a la que hemos llamado "hostname" introducimos el nombre del host,  pero en lugar de especificar su valor, solicitamos al usuario que lo introduzca mediante teclado: 
-$hostname = Read-Host -Prompt 'Nombre del equipo'
-A continuación ejecutamos un cmdlet que nos permite renombar el equipo con el nombre almacenado en la variable $hostname:
-Rename-Computer $hostname
-Y, por último, ejecutamos el cmdlet que permite añadir el equipo al dominio:
-Add-computer -domainname $Domain -Credential instituto\gestor -newname $hostname -Restart
-En este último paso comentar dos cosas:
+<p>En una variable a la que hemos llamado "Domain" introducimos el nombre de nuestro dominio:</p>
+<p>$Domain = 'alorca.1a'</p>
+<p>En una variable a la que hemos llamado "hostname" introducimos el nombre del host,  pero en lugar de especificar su valor, solicitamos al usuario que lo introduzca mediante teclado:</p>
+<p>$hostname = Read-Host -Prompt 'Nombre del equipo'</p>
+<p>A continuación ejecutamos un cmdlet que nos permite renombar el equipo con el nombre almacenado en la variable $hostname:</p>
+<p>Rename-Computer $hostname</p>
+<p>Y, por último, ejecutamos el cmdlet que permite añadir el equipo al dominio:</p>
+<p>Add-computer -domainname $Domain -Credential instituto\gestor -newname $hostname -Restart</p>
+<p>En este último paso comentar dos cosas:</p>
 
-Una es que estamos especificando la credencial de un administrador cuyo nombre es "gestor" y pertenece al dominio "instituto" directamente en el comando (-Credential instituto\gestor). Si nos interesa más, podríamos solicitar al usuario que la introdujera por pantalla y la almacenamos en una variable y, posteriormente, usar la variable en el cmdlet Add-computer . Por ejemplo:
-$Credential = Get-Credential
+<p>Una es que estamos especificando la credencial de un administrador cuyo nombre es "gestor" y pertenece al dominio "instituto" directamente en el comando (-Credential instituto\gestor). Si nos interesa más, podríamos solicitar al usuario que la introdujera por pantalla y la almacenamos en una variable y, posteriormente, usar la variable en el cmdlet Add-computer . Por ejemplo:</p>
+<p>$Credential = Get-Credential</p>
 
-Otra, que estamos utilizando el parámetro -Restart para reiniciar el equipo justo después de cambiar el nombre, puesto que Windows requiere reiniciar para aplicar los cambios.</p>
+<p>Otra, que estamos utilizando el parámetro -Restart para reiniciar el equipo justo después de cambiar el nombre, puesto que Windows requiere reiniciar para aplicar los cambios.</p>
 
+<p>Para obtener el script dentro del servidor, deberemos de usar el comando wget, para obtener el de esta web debes de poner el siguiente <a href="https://raw.githubusercontent.com/alejandroorca/alejandroorca.github.io/master/dominios/script_1.ps1">enlace</a>.</p>
 
+<img src="Assets/script_1.jpg" alt="script" />
 
 </main> 
 <span class="ir-arriba icon-arrow-up"></span>
