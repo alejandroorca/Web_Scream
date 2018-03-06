@@ -63,7 +63,8 @@
 							</ul>
 						</nav>
 <h1>a.2) Administración de cuentas de usuarios y de equipos</h1>
-<p>Para la creación de usuarios en el dominio deberemos de crear un script con los sigueintes comandos:</p>
+<h2>Creación de usuario</h2>
+<p><b>Para la creación de usuarios en el dominio deberemos de crear un script con los siguientes comandos:</b></p>
 <p># En la primera línea se conecta al dominio. Esta línea requiere ser modificada.</p>
 <p>$Path= "LDAP://CN=Users,DC=alorca,DC=1a"</p>
 <p>$name = "Alejandro OC"</p>
@@ -84,7 +85,7 @@
 <p>Para poder ver el nombre del dominio sólo basta con poner <i>sconfig</i></p>
 <p>$name = "Alejandro OC"</p>
 <p><i>Estamos definiendo como se llamará el usuario.</i></p>
-<p>$NTname = "DanielCalbimonte"</p>
+<p>$NTname = "AlejandroOC"</p>
 <p>$ou = New-Object Directoryservices.DirectoryEntry($Path)</p>
 <p><i>En esta línea creamos un nuevo objeto (en este caso un usuario con el path establecido en la primera línea.</i></p>
 <p>$user = $ou.PSBase.Children.Add("CN=" + $name,'user')</p>
@@ -101,6 +102,35 @@
 <p>Para obtener el script dentro del servidor, deberemos de usar el comando wget, para obtener el de esta web debes de poner el siguiente <a href="https://raw.githubusercontent.com/alejandroorca/alejandroorca.github.io/master/dominios/script.ps1">enlace</a>.</p>
 
 <img src="Assets/script.jpg" alt="script" />
+
+<p>Para visualizar las propiedades del usuario usamos el comando <i><b>Get-AdUser AlejandroOC -Properties *|more</b></i></p>
+
+<img src="Assets/propiedades.jpg" alt="propiedades" />
+
+<h2>Añadir equipos al dominio</h2>
+
+<p>$Domain = 'instituto.extremadura.es'</p>
+<p>$hostname = Read-Host -Prompt 'Nombre del equipo'</p>
+<p>Rename-Computer $hostname</p>
+<p>Add-computer -domainname $Domain -Credential instituto\gestor -newname $hostname -Restart</p>
+
+<h2>EXPLICACIÓN PASO A PASO</h2>
+<p>
+En una variable a la que hemos llamado "Domain" introducimos el nombre de nuestro dominio:
+$Domain = 'alorca.1a'
+En una variable a la que hemos llamado "hostname" introducimos el nombre del host,  pero en lugar de especificar su valor, solicitamos al usuario que lo introduzca mediante teclado: 
+$hostname = Read-Host -Prompt 'Nombre del equipo'
+A continuación ejecutamos un cmdlet que nos permite renombar el equipo con el nombre almacenado en la variable $hostname:
+Rename-Computer $hostname
+Y, por último, ejecutamos el cmdlet que permite añadir el equipo al dominio:
+Add-computer -domainname $Domain -Credential instituto\gestor -newname $hostname -Restart
+En este último paso comentar dos cosas:
+
+Una es que estamos especificando la credencial de un administrador cuyo nombre es "gestor" y pertenece al dominio "instituto" directamente en el comando (-Credential instituto\gestor). Si nos interesa más, podríamos solicitar al usuario que la introdujera por pantalla y la almacenamos en una variable y, posteriormente, usar la variable en el cmdlet Add-computer . Por ejemplo:
+$Credential = Get-Credential
+
+Otra, que estamos utilizando el parámetro -Restart para reiniciar el equipo justo después de cambiar el nombre, puesto que Windows requiere reiniciar para aplicar los cambios.</p>
+
 
 
 </main> 
