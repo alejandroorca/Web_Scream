@@ -74,11 +74,11 @@
 <p>$user.SAMAccountName = $NTname</p>
 <p>$user.Description = "User_1"</p>
 <p>$user.PSBase.CommitChanges()</p>
-<p>$user.SetPassword("root")</p>
+<p>$user.SetPassword("administracion")</p><br/>
 
 
 
-<p>EXPLICACIÓN PASO A PASO</p>
+<h2>EXPLICACIÓN PASO A PASO</h2>
 <p>$Path= "LDAP://CN=Users,DC=alorca,DC=1a"</p>
 <p><i>En esta línea me estoy conectando a mi dominio alorca.1a. Luego estoy entrando al contenedor users.</i></p>
 <p>Para poder ver el nombre del dominio sólo basta con poner <i>sconfig</i></p>
@@ -95,10 +95,13 @@
 <p><i>Establece el tipo de cuenta.</i></p>
 <p><p>$user.Description = "User_1"</p></p>
 <p><i>Establece una descripción del usuario.</i></p>
-<p>$user.SetPassword("root")</p>
-<p><i>Establece una contraseña 'root'</i></p>
+<p>$user.SetPassword("administracion")</p>
+<p><i>Establece una contraseña 'administracion'</i></p>
 
 <p>Para obtener el script dentro del servidor, deberemos de usar el comando wget, para obtener el de esta web debes de poner el siguiente <a href="https://raw.githubusercontent.com/alejandroorca/alejandroorca.github.io/master/dominios/script.ps1">enlace</a>.</p>
+
+<img src="Assets/script.jpg" alt="script" />
+
 
 </main> 
 <span class="ir-arriba icon-arrow-up"></span>
