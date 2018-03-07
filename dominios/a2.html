@@ -112,7 +112,7 @@
 <p>$Domain = 'alorca.1a'</p>
 <p>$hostname = Read-Host -Prompt 'Nombre del equipo'</p>
 <p>Rename-Computer $hostname</p>
-<p>Add-computer -domainname $Domain -Credential instituto\gestor -newname $hostname -Restart</p>
+<p>Add-computer -domainname $Domain -Credential alorca\user -newname $hostname -Restart</p>
 
 <h2>EXPLICACIÓN PASO A PASO</h2>
 <p>En una variable a la que hemos llamado "Domain" introducimos el nombre de nuestro dominio:</p>
@@ -122,10 +122,10 @@
 <p>A continuación ejecutamos un cmdlet que nos permite renombar el equipo con el nombre almacenado en la variable $hostname:</p>
 <p>Rename-Computer $hostname</p>
 <p>Y, por último, ejecutamos el cmdlet que permite añadir el equipo al dominio:</p>
-<p>Add-computer -domainname $Domain -Credential instituto\gestor -newname $hostname -Restart</p>
+<p>Add-computer -domainname $Domain -Credential alorca\user -newname $hostname -Restart</p>
 <p>En este último paso comentar dos cosas:</p>
 
-<p>Una es que estamos especificando la credencial de un administrador cuyo nombre es "gestor" y pertenece al dominio "instituto" directamente en el comando (-Credential instituto\gestor). Si nos interesa más, podríamos solicitar al usuario que la introdujera por pantalla y la almacenamos en una variable y, posteriormente, usar la variable en el cmdlet Add-computer . Por ejemplo:</p>
+<p>Una es que estamos especificando la credencial de un administrador cuyo nombre es "user" y pertenece al dominio "alorca" directamente en el comando (-Credential instituto\gestor). Si nos interesa más, podríamos solicitar al usuario que la introdujera por pantalla y la almacenamos en una variable y, posteriormente, usar la variable en el cmdlet Add-computer . Por ejemplo:</p>
 <p>$Credential = Get-Credential</p>
 
 <p>Otra, que estamos utilizando el parámetro -Restart para reiniciar el equipo justo después de cambiar el nombre, puesto que Windows requiere reiniciar para aplicar los cambios.</p>
