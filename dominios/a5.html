@@ -64,8 +64,10 @@
 <h1>a.5) Creación de plantillas que facilitan la administración de usuarios</h1>
 
 
-<img src="http://mma.interbus.es/documents/42150/42656/construccion.jpg/732d28b6-65be-4067-9807-619c20ac1389?t=1481622702000" alt="in_progress" />
-
+<p>Como de costumbre, comenzamos por abrir la herramienta <i>Usuarios y equipos de Active Directory.</i> Una vez allí creamos un usuario a modo de <i>plantilla</i>.</p>
+<img src="Assets/plantilla.jpg" alt="plantilla"/>
+<p>Una vez dado los valores principales a la plantilla, le damos a <b>Siguiente</b>, nos preguntará por una contraseña, se la asignamos y debajo en las opciones marcables, marcamos estas dos opciones <b>El usuario no puede cambiar la contraseña</b> y <b>La contraseña nunca expira</b>, una vez ya realizado esto proseguimos y le damos a finalizar. Ahora le damos con click derecho en plantilla y nos metemos en la sección <i>Perfil</i>, y ahí deberemos de poner la ruta que usaremos en los perfiles móviles, en mi caso es : <b>\\Equipo1\Personal\Perfiles\%username%</b>, es importante poner al final <b>%username%</b> en vez el nombre del usuario, ya que <b>%username</b>, se lo asigna automáticamente, quedaría así el resultado final de la plantilla (en la foto sale "plantilla" y es porque al darle aplicar el "%username%" ya asigna el nombre de usuario).</p>
+<img src="Assets/plantilla1.jpg" alt="plantilla"/>
 
 </main> 
 <span class="ir-arriba icon-arrow-up"></span>
