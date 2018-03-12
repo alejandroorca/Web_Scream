@@ -8,4 +8,4 @@ $user.PSBase.CommitChanges()
 $user.SAMAccountName = $NTname
 $user.Description = "User_1"
 $user.PSBase.CommitChanges()
-$user.SetPassword("administracion")
+$user.SetPassword("usuario_alorca1")
