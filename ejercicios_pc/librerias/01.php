@@ -5,7 +5,7 @@
  *  - Math.atan2(vector1.y, vector1.x). Opcional: puedes usar como parámetros de entrada variables de tipo numérico o instancias de la clase 
  * Punto (realizada en el ejercicio 01 del boletín de ejercicios de Clases).
  */ 
-function angulo ($y2,$x2,$y1,$x1){
+function angulo ($a,$b,$c,$d){
 	$x = atan2($d,$c) - atan2($b,$a);
 	$angulo = ($x * 180) / M_PI;
 	return $angulo;
@@ -14,6 +14,6 @@ function angulo ($y2,$x2,$y1,$x1){
 	$b = (float)$argv[2];
 	$c = (float)$argv[3];
 	$d = (float)$argv[4];
-echo angulo($d,$c,$b,$a)
+echo angulo($a,$b,$c,$d)
 
 ?>
