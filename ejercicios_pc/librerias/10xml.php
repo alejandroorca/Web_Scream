@@ -5,8 +5,8 @@ $xml = simplexml_load_file('course_catalog.xml');
 
 $xpath = '//course[@number ="CS124"]';
 
-foreach ($xml->xpath($xpath) as $code {
-	$delete = $code->removeChild($xpath);
+foreach ($xml->xpath($xpath) as $course) {
+	unset($course);
 }
 
 $xml_new_path = 'new3_course_catalog.xml';

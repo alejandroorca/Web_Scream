@@ -168,6 +168,16 @@ foreach($xml->children() as $paj) {
 
 $xml = simplexml_load_file('course_catalog.xml');
 
+$xpath = '//department[title = "Computer Science"]';
+
+foreach($xml->xpath($xpath) as $title) {
+  echo $title->chair->professor->first_name . ' ';
+  echo $title->chair->professor->last_name . PHP_EOL;
+	}
+
+
+$xml = simplexml_load_file('course_catalog.xml');
+
 //*05. Localiza e imprime los apellidos de todos los jefes de departamento.*//
 
 $xml = simplexml_load_file('course_catalog.xml');
