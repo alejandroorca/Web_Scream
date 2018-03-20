@@ -64,13 +64,19 @@
 						</nav>
 
 <h1>a.2) Equipos al dominio</h1>
+<h2>Pasos previos a añadir un equipo</h2>
+<p>Al cliente le asignamos una IP fija que comprenda en el rango de IP del servidor, la misma máscara de red y de puerta de enlace predeterminada ponemos la dirección IP de nuestro dominio y de DNS primario ponemos la dirección IP del dominio.</p>
+<h2>Añadir equipos</h2>
 <p>Para añadir equipos al dominio nos dirigimos a <i><b>Usuarios y equipos de Active Directory</b></i>, crearemos una unidad organizativa para los usuarios del departamento <i>administración</i>, una vez creada dicha unidad, insertaremos los usuarios con sus respectivos equipos.</p>
 <img src="Assets/cliente.jpg" alt="cliente" />
-<p>Una vez creado el usuario, configuramos el DNS primario para poder conectarnos a nuestro servidor, una vez ya hecho lo anterior, nos dirigimos a <b>Configuración de Windows-->Obtener acceso a trabajo y a escuela</b>, una vez allí le damos a <i>conectar</i>, una vez dado nos aparece la siguiente ventana.</p>
+<p>Una vez creado el usuario, nos dirigimos a <b>este equipo</b>, le damos click derecho en propiedades y luego le damos a <b>cambiar configuración</b>, nos aparecerá una pequeña ventana y ahí le damos a <b>cambiar</b> y nos aparece lo siguiente.</p>
 <img src="Assets/cliente1.jpg" alt="script" />
-<p>Le damos a <b>unir este dispositivo a un dominio local de Active Directory</b>, una vez dado nos solicitará el nombre del dominio, se lo introducimos y le damos a siguiente
-
-
+<p>Le damos click a <b>dominio</b> e introducimos el nombre de nuestro dominio, luego de ponerlo le damos click a <b>aceptar</b>, nos aparecerá una nueva ventana, en el cual tenemos que poner <b>Administrador y su contraseña</b>. Si todo ha salido correctamente nos aparece lo siguiente <i>se unió correctamente al dominio.</i> Nos saldrá un error pero es normal, le damos a <b>aceptar</b> y nos pedirá luego que reiniciemos el equipo.</p>
+<img src="Assets/cliente2.jpg" alt="cliente" />
+<p>Nos vamos al servidor y al usuario que le creamos en el <b>Active Directory</b>, le asignamos el equipo que hemos añadido, para ver el equipo añadido nos vamos a <b>Active Directory > dominio > computers</b>, si todo ha salido correcto, debe aparecer el equipo que hemos añadido. Le asignamos el equipo añadido al usuario creado, una vez llegado ahí nos vamos a la unidad organizativa que hemos creado y le damos click derecho al usuario que le vamos a añadir el equipo, nos vamos a la sección <b>cuenta</b> y luego le damos a <b>iniciar sesión en...</b>, nos aparecerá una nueva ventana y ahí escribimos el nombre del equipo y lo agregamos, quedaría tal así.</p>
+<img src="Assets/cliente3.jpg" alt="cliente" />
+<p>Nos vamos al ordenador de cliente y para iniciar sesión le tenemos que dar a <b>Otro usuario</b> y ahí introducimos el <i>username</i> y <i>password</i> del dominio. Si todo es correcto nos debe de iniciar sesión sin problemas.</p>
+<img src="Assets/cliente4.jpg" alt="cliente" />
 
 </main> 
 <span class="ir-arriba icon-arrow-up"></span>
