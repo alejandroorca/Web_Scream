@@ -62,9 +62,31 @@
                                 </li>
 							</ul>
 						</nav>
-
-
-<img src="http://mma.interbus.es/documents/42150/42656/construccion.jpg/732d28b6-65be-4067-9807-619c20ac1389?t=1481622702000" alt="in_progress" />
+<h1>Se han tenido en cuenta los requerimientos de seguridad</h1>
+<p>Como hemos dicho en secciones anteriores, existen varios métodos de seguridad, actualizar servidor, copias de seguridad, entre otros.</p>
+<h2>Actualizar servidor</h2>
+<p>Para actualizar el dominio, nos dirigimos a <b>Windows Update</b> e instalamos las nuevas actualizaciones disponible</p>
+<img src="Assets/seguro.jpg" alt="cliente" /> 
+<h2>Copias de seguridad</h2>
+<p>PASOS PREVIOS</p>
+<p>Deberemos de tener instalado el rol de las copias de seguridad en el dominio, para ello nos dirigimos a añadir roles e instalamos esa característica.</p>
+<p>Para realizar las copias de seguridad nos dirigiremos a <b>Administrador del servidor > Herramientas</b> y clickeamos en <b>Copias de seguridad de Windows Server</b>, le hacemos click en <b>Hacer una copia de seguridad una vez...</b>, se nos abrirá una ventana nueva y elegimos el checkbox de <b>Opciones diferentes</b> y le damos a siguiente, tenemos dos opciones, de hacer una copia al servidor entero o personalizada, se recomienda completa. En este caso hemos marcado completa, le damos a siguiente y elegimos si lo queremos en <b>Unidades locales o en carpeta compartida remota</b>, en este caso hemos seleccionado la unidad local <b>E</b>.</p>
+<img src="Assets/seguro1.jpg" alt="cliente" /> 
+<p>Aceptamos y realizamos la copia de seguridad (tarda varios minutos, eso dependerá de los recursos de tu maquina), una vez ya creado le damos a <b>Cerrar</b>, para cargar una copia de seguridad le hacemos click en <b>Recuperar</b>, nos preguntará si se encuentra en el servidor o en otro almacenamiento, este caso lo tenemos en el servidor. Automáticamente nos buscará la última copia de seguridad realizada.</p>
+<img src="Assets/seguro3.jpg" alt="cliente" />
+<p>Seleccionamos archivos y carpetas, le damos a siguiente, seleccionamos elementos, ubicación y comenzamos la copia de seguridad.</p> 
+<h2>Evitar ransomware</h2>
+<p>PASOS PREVIOS</p>
+<p>Tenemos que añadir la función <b>Administrador de recursos del servidor de archivos</b>.</p>
+<p>Le pasaremos un script en el cual se añadirán nuevas extensiones en las cuales bloquearemos ya que son muy usadas por los ransomware, haz click <a href="">aquí</a> para obtener el código del script. Una vez que lo tengamos lo ejecutamos con <b>PowerShell</b>.</p>
+<img src="Assets/seguro4.jpg" alt="cliente" />
+<p>Nos dirigimos a <b>Administrador del servidor</b> y a <b>Administrador de recursos del servidor de archivos</b>, desplegamos <b>Adminitración del filtrado de archivos</b> y seleccionamos <b>Grupos de archivos</b> y abajo del todo aparecerá el grupo que hemos creado.</p>
+<img src="Assets/seguro5.jpg" alt="cliente" />
+<p>Creamos una plantilla de filtro de archivos, para crearlo le hacemos click derecho y en crear nueva plantilla, le asignamos un nombre y seleccionamos un grupo de archivos que el cual seleccionaremos es el que hemos creado nuevo <b>"ransomware_extensions"</b>, una vez dado nos vamos a la sección de mensaje de correo electrónico, aquí podemos habilitar de que nos envíen un mensaje a nuestro correo cuando un usuario ha utilizado un archivo no autorizado, también podemos crear una advertencia en el registro y que se genere un comando al ver que se está haciendo uso de un ransomware e incluso hacer un informe de todo, la recomendación que doy es habilitar todas estas funciones.</p>
+<img src="Assets/seguro6.jpg" alt="cliente" />
+<p>Nos dirigimos a <b>Filtros de archivos</b>, creamos un filtro nuevo y elegimos una carpeta en el cual lo aplicaremos y marcamos el primer checkbox y en el menú desplegable marcamos "ransomware" y creamos.</p>
+<img src="Assets/seguro7.jpg" alt="cliente" />
+<p>Con todo esto podemos evitar un ataque <b>RANSOMWARE</b></p>
 
 
 </main> 

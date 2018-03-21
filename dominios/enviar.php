@@ -17,6 +17,6 @@ email:".$email."
 mensaje:".$mensaje.""; 
 
 if (mail($mail,"Formulario de Consulta",$message)) 
-Header ("Location: $thank"; 
+Header ("Location: $thank"); 
 
 ?> 

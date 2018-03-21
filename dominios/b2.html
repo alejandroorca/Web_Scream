@@ -65,8 +65,14 @@
 						</nav>
 
 <h1>b.2) Bloqueos de acceso no autorizados al dominio</h1>
-<p>Existen diversas medidas de seguridad para que un usuario no pueda acceder al dominio, a continuación diremos algunas.<br/> 
-
+<p>Existen diversas medidas de seguridad para el dominio, en este caso mostraremos las más usuales para que el usuario no tenga acceso al dominio.<br/> La principal medida que se puede tomar es que un equipo no esté agregado al dominio, porque al no estar agregado, el inicio de sesión sería imposible, para asignar un horario para la conexión, nos dirigimos a <b>Administración de directivas de grupo</b>, una vez ahí desplegamos los <i>Dominios</i> y luego desplegamos nuestro dominio, como aparece en la foto.</p>
+<img src="Assets/seguridad.jpg" alt="cliente" />
+<p>Le hacemos click derecho en <b>Default Domain Policy</b> y le damos a <b>Editar</b>, se nos abrirá una nueva ventana, desplegamos en el siguiente orden, <b>Directivas > Plantillas administrativas > Sistema > Servicio Hora de Windows</b> y hacemos click en <b>Proveedores de hora</b> y abrimos <b>Configurar el cliente NTP de Windows</b>.</p>
+<img src="Assets/seguridad2.jpg" alt="cliente" />
+<p>Habilitamos y en <b>NtpServer</b> ponemos nuestro dominio, una vez puesto aceptamos y abrimos <b>Habilitar el cliente NTP de Windows</b>, habilitamos nuevamente y aceptamos, a continuación nos dirigimos a <b>Habilitar el servidor NTP de Windows</b>, habilitamos y aceptamos. Una vez realizado todo lo anterior nos dirigimos al <b>Active directory</b>, una vez allí nos vamos a los usuarios los cuales queremos establecer un horario, para ello le hacemos click derecho en el usuario, nos vamos a propiedades y luego a la sección de cuenta y le hacemos click en <b>Horas de inicio de sesión...</b> y ahí le configuramos el horario.</p>
+<img src="Assets/seguridad3.jpg" alt="cliente" />
+<p>También se puede poner una fecha de expiración de cuenta, para hacerlo debemos de ir a la sección cuenta y le establecemos una fecha.</p>
+<img src="Assets/seguridad4.jpg" alt="cliente" />
 
 </main> 
 <span class="ir-arriba icon-arrow-up"></span>
