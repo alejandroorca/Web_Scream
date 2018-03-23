@@ -62,7 +62,7 @@
                                 </li>
 							</ul>
 						</nav>
-<h1>Se han tenido en cuenta los requerimientos de seguridad</h1>
+<h1>b.4) Se han tenido en cuenta los requerimientos de seguridad</h1>
 <p>Como hemos dicho en secciones anteriores, existen varios métodos de seguridad, actualizar servidor, copias de seguridad, entre otros.</p>
 <h2>Actualizar servidor</h2>
 <p>Para actualizar el dominio, nos dirigimos a <b>Windows Update</b> e instalamos las nuevas actualizaciones disponible</p>
@@ -70,7 +70,7 @@
 <h2>Copias de seguridad</h2>
 <p>PASOS PREVIOS</p>
 <p>Deberemos de tener instalado el rol de las copias de seguridad en el dominio, para ello nos dirigimos a añadir roles e instalamos esa característica.</p>
-<p>Para realizar las copias de seguridad nos dirigiremos a <b>Administrador del servidor > Herramientas</b> y clickeamos en <b>Copias de seguridad de Windows Server</b>, le hacemos click en <b>Hacer una copia de seguridad una vez...</b>, se nos abrirá una ventana nueva y elegimos el checkbox de <b>Opciones diferentes</b> y le damos a siguiente, tenemos dos opciones, de hacer una copia al servidor entero o personalizada, se recomienda completa. En este caso hemos marcado completa, le damos a siguiente y elegimos si lo queremos en <b>Unidades locales o en carpeta compartida remota</b>, en este caso hemos seleccionado la unidad local <b>E</b>.</p>
+<p>Para realizar las copias de seguridad nos dirigiremos a <b>Administrador del servidor &gt Herramientas</b> y clickeamos en <b>Copias de seguridad de Windows Server</b>, le hacemos click en <b>Hacer una copia de seguridad una vez...</b>, se nos abrirá una ventana nueva y elegimos el checkbox de <b>Opciones diferentes</b> y le damos a siguiente, tenemos dos opciones, de hacer una copia al servidor entero o personalizada, se recomienda completa. En este caso hemos marcado completa, le damos a siguiente y elegimos si lo queremos en <b>Unidades locales o en carpeta compartida remota</b>, en este caso hemos seleccionado la unidad local <b>E</b>.</p>
 <img src="Assets/seguro1.jpg" alt="cliente" /> 
 <p>Aceptamos y realizamos la copia de seguridad (tarda varios minutos, eso dependerá de los recursos de tu maquina), una vez ya creado le damos a <b>Cerrar</b>, para cargar una copia de seguridad le hacemos click en <b>Recuperar</b>, nos preguntará si se encuentra en el servidor o en otro almacenamiento, este caso lo tenemos en el servidor. Automáticamente nos buscará la última copia de seguridad realizada.</p>
 <img src="Assets/seguro3.jpg" alt="cliente" />
@@ -87,9 +87,15 @@
 <p>Nos dirigimos a <b>Filtros de archivos</b>, creamos un filtro nuevo y elegimos una carpeta en el cual lo aplicaremos y marcamos el primer checkbox y en el menú desplegable marcamos "ransomware" y creamos.</p>
 <img src="Assets/seguro7.jpg" alt="cliente" />
 <p>Con todo esto podemos evitar un ataque <b>RANSOMWARE</b></p>
-
-
-</main> 
+<h2>Prohibir instalación de Software en equipos del dominio</h2>
+<p>Para ello nos dirigimos a <b>Administración de directivas de grupo</b>, nos dirigimos a nuestra unidad organizativa y creamos una nueva unidad organizativa, una vez creada la editamos haciendo click derecho sobre ella, se nos abrirá una nueva ventana en la cual seguiremos este orden de despliegue <b>Directivas &gt Plantillas administrativas &gt Componentes de windows</b> y hacemos click en <b>Windows Installer</b>.</p>
+<img src="Assets/seguro8.jpg" alt="cliente" />
+<p>Le hacemos doble click en <b>Desactivar Windows Installer</b>, se nos abrirá una nueva ventana, en la cual marcaremos <i>Habilitada</i>, y le marcamos la opción <b>Siempre</b> y le damos a <b>Aceptar</b>.</p>
+<img src="Assets/seguro9.jpg" alt="cliente" />
+<p>Una vez realizado esto debemos de ir al ordenador del cliente y ejecutar en Powershell el comando <b>gpupdate /force</b>, al ejecutar dicho comando lo que hacemos es actualizar el GPO.</p>
+<img src="Assets/seguro10.jpg" alt="cliente" />
+<p>Y con esto ya el usuario no puede instalar ningún software, salvo que lo haga el administrador</p>
+</main>  
 <span class="ir-arriba icon-arrow-up"></span>
 </body>
 </html>
