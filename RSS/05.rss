@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+	<title>Ciencia ABC</title>
+	<description>Noticias de la ciencia</description>
+	<link>http://www.abc.es/ciencia/</link>
+	<ttl>30</ttl>
+
+<item>
+	<title>Observan cómo un agujero negro devora una estrella</title>
+	<description>Un astro parecido al Sol es literalmente destrozado por la inmensa fuerza gravitatoria de un «monstruo» espacial en una lejana galaxia.</description>
+    <link>http://www.abc.es/ciencia/abci-observan-como-agujero-negro-devora-estrella-201804030854_noticia.html</link>
+</item>
+<item>
+	<title>¿Se está haciendo la Vía Láctea cada vez más grande?</title>
+	<description>Nuestra galaxia crece 500 metros por segundo, lo suficientemente rápido como para cubrir la distancia de Madrid a Valencia en menos de doce minutos.</description>
+	<link>http://www.abc.es/ciencia/abci-esta-haciendo-lactea-cada-mas-grande-201804022055_noticia.html</link>
+</item>
+<item>
+	<title>La solución matemática más larga de la Historia</title>
+	<description>La demostración del problema de las ternas pitagóricas booleanas ocupó 200 terabytes de información proporcionada por un supercomputador.</description>
+	<link>http://www.abc.es/ciencia/abci-solucion-matematica-mas-larga-historia-201804022054_noticia.html</link>
+</item>
+</channel>
+</rss>
