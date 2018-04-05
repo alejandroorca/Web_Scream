@@ -3,14 +3,14 @@
    <title>MuyLinux</title>
     <link href="https://www.muylinux.com/" />
    <link href="https://www.muylinux.com/feed" rel="self"/>
-   <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6</id>
+   <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af4</id>
    <updated>2018-04-05T18:30:02Z</updated>
    
    <entry>
       <title>Microsoft SQL Server 2017 para Linux, lo más destacado de la presentación oficial en España</title>
       <link href="https://www.muylinux.com/2018/03/01/microsoft-sql-server-2017-linux/"/>
       <link rel="alternate" type="text/html" href="https://www.muylinux.com/2018/03/01/microsoft-sql-server-2017-linux.html"/>
-      <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6</id> 
+      <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af5</id> 
       <updated>2018-04-05T18:30:02Z</updated>
       <summary>¡Microsoft hasta en la sopa! ¿Quién lo hubiera dicho hace unos años? Hace tiempo, las menciones a Microsoft en estas páginas se restringían a los tópicos de turno, que sí Windows vs Linux, que si aplicaciones, que si arranque</summary>
          <author>
@@ -32,7 +32,7 @@
       <title>Kubernetes 1.10 incluye novedades en almacenamiento y seguridad</title>
       <link href="https://www.muylinux.com/2018/04/02/kubernetes-1-10/"/>
       <link rel="alternate" type="text/html" href="https://www.muylinux.com/2018/04/02/kubernetes-1-10.html"/>
-      <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6</id> 
+      <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af7</id> 
       <updated>2018-04-05T18:30:02Z</updated>
       <summary>La semana pasada fue publicada Kubernetes 1.10, la última versión de la conocida tecnología de orquestación de contenedores cuya trayectoria está bastante ligada a la de GNU/Linux, además de ser uno de lo proyectos Open Source de referencia dentro de su segmento...</summary>
          <author>
