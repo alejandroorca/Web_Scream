@@ -3,15 +3,15 @@
    <title>MuyLinux</title>
     <link href="https://www.muylinux.com/" />
    <link href="https://www.muylinux.com/feed" rel="self"/>
-   <id>5545454648</id>
-   <updated>03/04/18</updated>
+   <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6</id>
+   <updated>2018-04-05T18:30:02Z</updated>
    
    <entry>
       <title>Microsoft SQL Server 2017 para Linux, lo más destacado de la presentación oficial en España</title>
       <link href="https://www.muylinux.com/2018/03/01/microsoft-sql-server-2017-linux/"/>
       <link rel="alternate" type="text/html" href="https://www.muylinux.com/2018/03/01/microsoft-sql-server-2017-linux.html"/>
-      <id>456584</id> 
-      <updated>01/03/18</updated>
+      <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6</id> 
+      <updated>2018-04-05T18:30:02Z</updated>
       <summary>¡Microsoft hasta en la sopa! ¿Quién lo hubiera dicho hace unos años? Hace tiempo, las menciones a Microsoft en estas páginas se restringían a los tópicos de turno, que sí Windows vs Linux, que si aplicaciones, que si arranque</summary>
          <author>
       <name>J.Pomeyrol</name>
@@ -21,8 +21,8 @@
       <title>Linux 4.16 ya incluye drivers para los invitados en VirtualBox</title>
       <link href="https://www.muylinux.com/2018/04/02/linux-4-16/"/>
       <link rel="alternate" type="text/html" href="https://www.muylinux.com/2018/04/02/linux-4-16.html"/>
-      <id>456584</id> 
-      <updated>02/04/18</updated>
+      <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6</id> 
+      <updated>2018-04-05T18:30:02Z</updated>
       <summary>Lo primero que destaca de Linux 4.16 es la inclusión de drivers para mejorar la integración de Linux como sistema invitado en VirtualBox…</summary>
          <author>
       <name>Eduardo Medina</name>
@@ -32,8 +32,8 @@
       <title>Kubernetes 1.10 incluye novedades en almacenamiento y seguridad</title>
       <link href="https://www.muylinux.com/2018/04/02/kubernetes-1-10/"/>
       <link rel="alternate" type="text/html" href="https://www.muylinux.com/2018/04/02/kubernetes-1-10.html"/>
-      <id>456584</id> 
-      <updated>02/04/18</updated>
+      <id>urn:uuid:60a76c80-d399-11d9-b91C-0003939e0af6</id> 
+      <updated>2018-04-05T18:30:02Z</updated>
       <summary>La semana pasada fue publicada Kubernetes 1.10, la última versión de la conocida tecnología de orquestación de contenedores cuya trayectoria está bastante ligada a la de GNU/Linux, además de ser uno de lo proyectos Open Source de referencia dentro de su segmento...</summary>
          <author>
       <name>Eduardo Medina</name>
