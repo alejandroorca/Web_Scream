@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<estudiantes>
+	<estudiante>
+		<nombre>Alejandro</nombre>
+		<apellidos>Laguna</apellidos>
+		<nota></nota>
+		<comienzo>2017-09-23</comienzo>
+		<finalizacion>2018-06-23</finalizacion>
+		<modulo>1ASIR</modulo>
+	</estudiante>
+</estudiantes>

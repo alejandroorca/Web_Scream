@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+ <xs:element name='estudiantes'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name='estudiante' type='estudiante_type' minOccurs='0' maxOccurs='unbounded' />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name='estudiante_type'>
+    <xs:sequence>
+      <xs:element name='nombre' type='xs:string' />
+      <xs:element name='apellidos' type='xs:string' />
+      <xs:element name='nota' type='xs:integer' default='1' />
+      <xs:element name='comienzo' type='xs:date' />
+      <xs:element name='finalizacion' type='xs:date'/>
+      <xs:element name='modulo' fixed='1ASIR' type='xs:string'  />
+          </xs:sequence>
+  </xs:complexType>
+</xs:schema>

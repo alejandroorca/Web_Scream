@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<correos>
+<correo>
+	<destinatario>Julia</destinatario>
+	<procedencia>Alejandro</procedencia>
+	<asunto>Hola</asunto>
+	<mensaje>Hola ¿qué tal?.</mensaje>
+	</correo>
+</correos>

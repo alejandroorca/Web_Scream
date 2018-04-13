@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+ <xs:element name='correos'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name='correo' type='correo_type' minOccurs='0' maxOccurs='unbounded' />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name='correo_type'>
+    <xs:sequence>
+      <xs:element name='destinatario' type='xs:string' />
+      <xs:element name='procedencia' type='xs:string' />
+      <xs:element name='asunto' type='xs:string' />
+      <xs:element name='mensaje' type='xs:string' />
+          </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
