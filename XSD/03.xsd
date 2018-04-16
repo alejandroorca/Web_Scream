@@ -1,20 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
- <xs:element name='taxonomia'>
+ <xs:element name='Taxonomia'>
     <xs:complexType>
       <xs:sequence>
-        <xs:element name='perro' type='perro_type' minOccurs='0' maxOccurs='unbounded' />
+        <xs:element name='Perro' type='perro_type' minOccurs='0' maxOccurs='unbounded' />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:complexType name='perro_type'>
     <xs:sequence>
-      <xs:element name='nombre' type='xs:string' />
-      <xs:element name='apellidos' type='xs:string' />
-      <xs:element name='nota' type='xs:integer' default='1' />
-      <xs:element name='comienzo' type='xs:date' />
-      <xs:element name='finalizacion' type='xs:date'/>
-      <xs:element name='modulo' fixed='1ASIR' type='xs:string'  />
+      <xs:element name='Dominio' type='xs:string' fixed='Eucarya' />
+      <xs:element name='Reino' type='xs:string' type='xs:required' />
+      <xs:element name='Subreino' type='xs:string' />
+      <xs:element name='Filo' type='xs:string' />
+      <xs:element name='Clase' type='xs:string' default=''/>
           </xs:sequence>
   </xs:complexType>
 </xs:schema>
