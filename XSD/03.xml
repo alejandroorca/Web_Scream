@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Taxonomia>
-	<Perro>
+	<Perro n_especie='300'>
 		<Dominio>Eucarya</Dominio>
 		<Reino>Laguna</Reino>
-		<Subreino></Subreino>
-		<Filo></Filo>
+		<Subreino>djsh</Subreino>
+		<Filo>sfsdfsa</Filo>
 		<Clase></Clase>
 	</Perro>
 </Taxonomia>

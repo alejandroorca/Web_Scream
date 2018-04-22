@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CD n_disco='01'>
+	<Titulo>Cero</Titulo>
+	<Artista>Dani Martin</Artista>
+	<Album>Dani Martin</Album>
+	<Age>2013</Age>
+	<Duracion>00:04:25</Duracion>
+	<Disponibilidad>true</Disponibilidad>
+</CD>

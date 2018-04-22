@@ -3,7 +3,7 @@
  <xs:element name='Taxonomia'>
     <xs:complexType>
       <xs:sequence>
-        <xs:element name='Perro' type='perro_type' minOccurs='0' maxOccurs='unbounded' />
+        <xs:element name='Perro' type='perro_type' />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -15,7 +15,6 @@
       <xs:element name='Filo' type='xs:string' />
       <xs:element name='Clase' type='xs:string' default='none'/>
           </xs:sequence>
-          <xs:atribute name='Numero_esp' use='required' type='xs:integer'/>
+    <xs:attribute name="n_especie" type="xs:integer" use="required"/>
   </xs:complexType>
 </xs:schema>
-
