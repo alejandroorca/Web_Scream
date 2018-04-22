@@ -10,11 +10,12 @@
   <xs:complexType name='perro_type'>
     <xs:sequence>
       <xs:element name='Dominio' type='xs:string' fixed='Eucarya' />
-      <xs:element name='Reino' type='xs:string' type='xs:required' />
+      <xs:element name='Reino' type='xs:string' />
       <xs:element name='Subreino' type='xs:string' />
       <xs:element name='Filo' type='xs:string' />
-      <xs:element name='Clase' type='xs:string' default=''/>
+      <xs:element name='Clase' type='xs:string' default='none'/>
           </xs:sequence>
+          <xs:atribute name='Numero_esp' use='required' type='xs:integer'/>
   </xs:complexType>
 </xs:schema>
 
