@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Administración de dominios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="fonts.css"/>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+  
+  $(document).ready(function(){
+ 
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+ 
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+ 
+});
+</script>    
+</head>
+<body>
+<main>	
+<nav>
+							<ul>
+								<li><a href="index.html">Principal</a></li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">A. Administración de dominios</a>
+                                <div class="dropdown-content">
+                                <a href="a1.html">a.1) Implementación de dominios</a>
+								<a href="a2.html">a.2) Administración de cuentas de usuarios y de equipos</a>
+								<a href="a3.html">a.3) Centralizar información</a>
+								<a href="a4.html">a.4) Creación y administración de grupos de seguridad</a>
+								<a href="a5.html">a.5) Creación de plantillas que facilitan la administración de usuarios</a>
+								<a href="a6.html">a.6) Organización de los objetos del dominio</a>
+								<a href="a7.html">a.7) Utilización de máquinas virtuales para la administración de dominios</a>
+								<a href="a8.html">a.8) Documentación de la estructura del dominio y la tareas realizadas</a>
+                                </div>
+                                </li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">B. Administración del acceso al dominio</a>
+                                <div class="dropdown-content">
+                                <a href="b1.html">b.1) Equipos al dominio</a>
+                                <a href="b2.html">b.2) Bloqueos de acceso no autorizados al dominio</a>
+                                <a href="b3.html">b.3) Administración de recursos locales y de red</a>
+                                <a href="b4.html">b.4) Se han tenido en cuenta los requerimientos de seguridad</a>
+                                <a href="b5.html">b.5) Implementación y verificación de directivas de grupos</a>
+                                <a href="b6.html">b.6) Asignación de directivas al grupo</a>
+                                <a href="b7.html">b.7) Documentación de incidencias y de tareas</a>
+								</div>
+                                </li>
+							</ul>
+						</nav>
+<h1>a.2) Administración de cuentas de usuarios y de equipos</h1>
+<h2>Creación de usuario</h2>
+<p><b>Para la creación de usuarios en el dominio deberemos de crear un script con los siguientes comandos:</b></p>
+<div class="codigo">
+<p># En la primera línea se conecta al dominio. Esta línea requiere ser modificada.</p>
+<p>$Path= "LDAP://CN=Users,DC=alorca,DC=1a"</p>
+<p>$name = "Alejandro OC"</p>
+<p>$NTname = "AlejandroOC"</p>
+<p>$ou = New-Object Directoryservices.DirectoryEntry($Path)</p>
+<p>$user = $ou.PSBase.Children.Add("CN=" + $name,'user')</p>
+<p>$user.PSBase.CommitChanges()</p>
+<p>$user.SAMAccountName = $NTname</p>
+<p>$user.Description = "User_1"</p>
+<p>$user.PSBase.CommitChanges()</p>
+<p>$user.SetPassword("usuario_alorca1")</p><br/>
+</div>
+
+
+<h2>EXPLICACIÓN PASO A PASO</h2>
+<p class="codigo"><code>$Path= "LDAP://CN=Users,DC=alorca,DC=1a"</code></p>
+<p><i>En esta línea me estoy conectando a mi dominio alorca.1a. Luego estoy entrando al contenedor users.</i></p>
+<p>Para poder ver el nombre del dominio sólo basta con poner <i>sconfig</i></p>
+<p class="codigo"><code>$name = "Alejandro OC"</code></p>
+<p><i>Estamos definiendo como se llamará el usuario.</i></p>
+<p class="codigo"><code>$NTname = "AlejandroOC"</code></p>
+<p class="codigo"><code>$ou = New-Object Directoryservices.DirectoryEntry($Path)</code></p>
+<p><i>En esta línea creamos un nuevo objeto (en este caso un usuario con el path establecido en la primera línea.</i></p>
+<p class="codigo"><code>$user = $ou.PSBase.Children.Add("CN=" + $name,'user')</code></p>
+<p><i>Estamos definiendo el nombre del usuario.</i></p>
+<p class="codigo"><code>$user.PSBase.CommitChanges()</code></p>
+<p><i>Guarda los cambios</i></p>
+<p class="codigo"><code>$user.SAMAccountName = $NTname</code></p>
+<p><i>Establece el tipo de cuenta.</i></p>
+<p class="codigo"><code>$user.Description = "User_1"</code></p>
+<p><i>Establece una descripción del usuario.</i></p>
+<p class="codigo"><code>$user.SetPassword("usuario_alorca1")</code></p>
+<p><i>Establece una contraseña 'usuario_alorca1'</i></p>
+
+<p>Para obtener el script dentro del servidor, deberemos de usar el comando wget, para obtener el de esta web debes de poner el siguiente <a href="https://raw.githubusercontent.com/alejandroorca/alejandroorca.github.io/master/dominios/script.ps1">enlace</a>.</p>
+
+<img src="Assets/script.jpg" alt="script" />
+
+<p>Para visualizar las propiedades del usuario usamos el comando <i><b>Get-AdUser AlejandroOC -Properties *|more</b></i></p>
+
+<img src="Assets/propiedades.jpg" alt="propiedades" />
+
+<h2>Añadir equipos al dominio</h2>
+<div class="codigo">
+<p>$Domain = 'alorca.1a'</p>
+<p>$hostname = Read-Host -Prompt 'Nombre del equipo'</p>
+<p>Rename-Computer $hostname</p>
+<p>Add-computer -domainname $Domain -Credential alorca\user -newname $hostname -Restart</p>
+</div>
+<h2>EXPLICACIÓN PASO A PASO</h2>
+<p><i>En una variable a la que hemos llamado "Domain" introducimos el nombre de nuestro dominio:</i></p>
+<p class="codigo"><code>$Domain = 'alorca.1a'</code></p>
+<p><i>En una variable a la que hemos llamado "hostname" introducimos el nombre del host,  pero en lugar de especificar su valor, solicitamos al usuario que lo introduzca mediante teclado:</i></p>
+<p class="codigo"><code>$hostname = Read-Host -Prompt 'Nombre del equipo'</code></p>
+<p><i>A continuación ejecutamos un cmdlet que nos permite renombar el equipo con el nombre almacenado en la variable $hostname:</i></p>
+<p class="codigo"><code>Rename-Computer $hostname</code></p>
+<p><i>Y, por último, ejecutamos el cmdlet que permite añadir el equipo al dominio:</i></p>
+<p class="codigo"><code>Add-computer -domainname $Domain -Credential alorca\user -newname $hostname -Restart</code></p>
+<p><i>En este último paso comentar dos cosas:</i></p>
+
+<p><i>Una es que estamos especificando la credencial de un administrador cuyo nombre es "user" y pertenece al dominio "alorca" directamente en el comando (-Credential instituto\gestor). Si nos interesa más, podríamos solicitar al usuario que la introdujera por pantalla y la almacenamos en una variable y, posteriormente, usar la variable en el cmdlet Add-computer . Por ejemplo:</i></p>
+<p class="codigo"><code>$Credential = Get-Credential</code></p>
+
+<p><i>Otra, que estamos utilizando el parámetro -Restart para reiniciar el equipo justo después de cambiar el nombre, puesto que Windows requiere reiniciar para aplicar los cambios.</i></p>
+
+<p><i>Para obtener el script dentro del servidor, deberemos de usar el comando wget, para obtener el de esta web debes de poner el siguiente <a href="https://raw.githubusercontent.com/alejandroorca/alejandroorca.github.io/master/dominios/script_1.ps1">enlace</a>.</i></p>
+
+<img src="Assets/script_1.jpg" alt="script" />
+
+<p><i>Al introducir el script y de poner el nombre nos pedirá las credenciales.</i></p>
+
+<img src="Assets/script_12.jpg" alt="script" />
+
+<p>Se introduce la contraseña del administrador y luego introducimos el comando restart-computer -confirm para reiniciar el equipo</p>
+<p>Para comprobar los equipos añadidos <b>Get-ADComputer -Filter *</b></p>
+
+<img src="Assets/script_13.jpg" alt="script" />
+</main> 
+<span class="ir-arriba icon-arrow-up"></span>
+</body>
+</html>

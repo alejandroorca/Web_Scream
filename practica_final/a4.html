@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Administración de dominios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="fonts.css"/>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+  
+  $(document).ready(function(){
+ 
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+ 
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+ 
+});
+</script>    
+</head>
+<body>
+<main>	
+<nav>
+							<ul>
+								<li><a href="index.html">Principal</a></li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">A. Administración de dominios</a>
+                                <div class="dropdown-content">
+                                <a href="a1.html">a.1) Implementación de dominios</a>
+								<a href="a2.html">a.2) Administración de cuentas de usuarios y de equipos</a>
+								<a href="a3.html">a.3) Centralizar información</a>
+								<a href="a4.html">a.4) Creación y administración de grupos de seguridad</a>
+								<a href="a5.html">a.5) Creación de plantillas que facilitan la administración de usuarios</a>
+								<a href="a6.html">a.6) Organización de los objetos del dominio</a>
+								<a href="a7.html">a.7) Utilización de máquinas virtuales para la administración de dominios</a>
+								<a href="a8.html">a.8) Documentación de la estructura del dominio y la tareas realizadas</a>
+                                </div>
+                                </li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">B. Administración del acceso al dominio</a>
+                                <div class="dropdown-content">
+                                <a href="b1.html">b.1) Equipos al dominio</a>
+                                <a href="b2.html">b.2) Bloqueos de acceso no autorizados al dominio</a>
+                                <a href="b3.html">b.3) Administración de recursos locales y de red</a>
+                                <a href="b4.html">b.4) Se han tenido en cuenta los requerimientos de seguridad</a>
+                                <a href="b5.html">b.5) Implementación y verificación de directivas de grupos</a>
+                                <a href="b6.html">b.6) Asignación de directivas al grupo</a>
+                                <a href="b7.html">b.7) Documentación de incidencias y de tareas</a>
+								</div>
+                                </li>
+							</ul>
+						</nav>
+
+<h1>a.4) Creación y administración de grupos de seguridad</h1>
+<h2>Creación de un grupo</h2>
+<p>Como en ocasiones anteriores, cuando se abra la ventana Usuarios y equipos de Active Directory, buscaremos en el panel de la izquierda el contenedor en el que queramos guardar el nuevo grupo. En este caso, volveremos a usar el contenedor Users, que ya utilizamos para las cuentas de usuario. Después haremos clic con el botón derecho del ratón sobre el contenedor.</p>
+<img src="Assets/group.jpg" alt="group" />
+<p>En ella, rellenaremos el nombre que queremos darle a la cuenta de grupo que estamos creando (Nombre de grupo). Marcamos las opciones de la captura</p>
+<img src="Assets/group1.jpg" alt="group" />
+<h2>Modificar valores en las cuentas de los grupos</h2>
+<p>Como en ocasiones anteriores, podemos volver a la herramienta Usuarios y equipos de Active Directory siempre que necesitemos ajustar las propiedades de las cuentas de grupos. Cuando se abra la ventana, haremos clic con el botón derecho del ratón sobre el grupo que queremos modificar. En las propiedadces tenemos diferentes solapas <b>General, Miembros, Miembro de y Aministrado por</b>, la solapa Miembros, elegiremos los usuarios, equipos o grupos que son miembros del grupo que estamos editando, la solapa Miembro de, para hacer que este grupo sea, a su vez, miembro de un grupo distinto, la solapa Administrado por, nos permite delegar la administración de este grupo en otro usuario diferente.</p>
+<img src="Assets/group2.jpg" alt="group" />
+<p>Le damos a <b>Agregar</b>, una vez ya dado, le pulsamos en <i>Opciones avanzadas</i>, una vez allí escribimos el nombre del usuario y le damos a <i>Buscar ahora</i> y luego a <b>Aceptar</b> y luego nuevamente en <b>Aceptar</b> y otra vez de nuevo en <b>Aceptar</b>. Con todo esto hemos añadido un usuario a un grupo.</p>
+
+<p>Para eliminar un usuario del grupo, abrimos las propiedades del grupo y en la parte de <b>Miembros</b> le damos a <i>Quitar</i> y luego aceptamos los cambios. Para añadir miembros que son de otro grupo, nos vamos a <b>Miembro de</b> y hacemos el mismo procedimiento que para agregar un usuario, pero este caso ponemos el nombre del grupo al cual pertenece las personas que queremos añadir y para elminar esos miembros que son de otro grupo pero lo hemos añadido al nuevo, su procedimiento es igual que el de eliminación de un usuario de un grupo.</p>
+<img src="Assets/group3.jpg" alt="group" />
+</main> 
+<span class="ir-arriba icon-arrow-up"></span>
+</body>
+</html>

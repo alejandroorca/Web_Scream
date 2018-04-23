@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Administración de dominios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="fonts.css"/>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+  
+  $(document).ready(function(){
+ 
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+ 
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+ 
+});
+</script>    
+</head>
+<body>
+<main>	
+<nav>
+							<ul>
+								<li><a href="index.html">Principal</a></li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">A. Administración de dominios</a>
+                                <div class="dropdown-content">
+                                <a href="a1.html">a.1) Implementación de dominios</a>
+								<a href="a2.html">a.2) Administración de cuentas de usuarios y de equipos</a>
+								<a href="a3.html">a.3) Centralizar información</a>
+								<a href="a4.html">a.4) Creación y administración de grupos de seguridad</a>
+								<a href="a5.html">a.5) Creación de plantillas que facilitan la administración de usuarios</a>
+								<a href="a6.html">a.6) Organización de los objetos del dominio</a>
+								<a href="a7.html">a.7) Utilización de máquinas virtuales para la administración de dominios</a>
+								<a href="a8.html">a.8) Documentación de la estructura del dominio y la tareas realizadas</a>
+                                </div>
+                                </li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">B. Administración del acceso al dominio</a>
+                                <div class="dropdown-content">
+                                <a href="b1.html">b.1) Equipos al dominio</a>
+                                <a href="b2.html">b.2) Bloqueos de acceso no autorizados al dominio</a>
+                                <a href="b3.html">b.3) Administración de recursos locales y de red</a>
+                                <a href="b4.html">b.4) Se han tenido en cuenta los requerimientos de seguridad</a>
+                                <a href="b5.html">b.5) Implementación y verificación de directivas de grupos</a>
+                                <a href="b6.html">b.6) Asignación de directivas al grupo</a>
+                                <a href="b7.html">b.7) Documentación de incidencias y de tareas</a>
+								</div>
+                                </li>
+							</ul>
+						</nav>
+<h1>a.3) Centralizar la información.</h1>
+
+<p><b>Se explicará el procedimiento de manera gráfica</b></p>
+
+<h2>Crear un perfil de usuario móvil en Active Directory</h2>
+
+<h3>Crear la carpeta contenedora para los perfiles</h3>
+
+<p>Para crear la carpeta contenedora, comenzaremos por abrir el <i>Explorador de archivos.</i> Después, nos desplazamos hasta el lugar donde queremos crear la carpeta compartida (en nuestro caso, lo crearemos dentro de la carpeta Personal, que es la que hemos utilizado en artículos anteriores para contener a otras carpetas compartidas). Una vez allí, hacemos clic con el botón derecho del ratón sobre cualquier espacio libre del área de trabajo. Así, creamos una nueva carpeta y, a continuación, le damos el nombre Perfiles ( aunque tú puedes ponerle el nombre que prefieras).</p>
+
+<img src="Assets/perfiles.jpg" alt="perfiles" />
+
+<h3>Cambiar los permisos para dar el control a los usuarios de un grupo.</h3>
+
+<p>Una vez creada la carpeta contenedora, debemos cambiar sus permisos para que los usuarios del grupo que hemos elegido puedan tener todo el control sobre ella. Para lograrlo, comenzamos por hacer clic con el botón derecho del ratón sobre ella. Cuando aparezca la ventana Propiedades: Perfiles (Perfiles es el nombre de la carpeta) hacemos clic en la solapa Compartir. En la ventana Uso compartido avanzado, que aparece a continuación, hacemos clic en Compartir esta carpeta.</p>
+
+<img src="Assets/compartida.jpg" alt="compartida" />
+
+<p>Esto hará que aparezca una nueva ventana con el título Permisos de Perfiles. A continuación, aparece la ventana Seleccionar Usuarios, Equipos, Cuentas de servicio o Grupos. Aquí podemos actuar de varias formas, por ejemplo, escribiendo el principio del nombre del grupo con el que queremos compartir la carpeta. Si existen varios nombres que comienzan por las letras que hemos escrito, aparecerá una ventana donde debemos elegir el nombre adecuado. De vuelta en la ventana Seleccionar Usuarios, Equipos, Cuentas de servicio o Grupos, vemos que ya aparece el nombre completo del grupo. </p>
+
+<img src="Assets/perfil.jpg" alt="perfil" />
+
+<p>También podemos evitar que accedan a la carpeta el resto de los usuarios, en las opciones del principio. Una vez ya realizado estos pasos podemos cerrar todas las ventanas.</p>
+
+<h3>Cambiar el lugar donde el usuario o los usuarios guardan su perfil</h3>
+
+<p>A partir de ahora es cuando realmente vamos a crear el perfil móvil. Para conseguirlo, volveremos a la consola Usuarios y equipos de Active Directory y localizamos la cuenta (o cuentas) a la que queremos asignar el perfil móvil.</p>
+
+<p>En la ventana de propiedades de la cuenta, hacemos clic sobre la solapa Perfil. En ella, debemos dar valor al cuadro de texto Ruta de acceso al perfil. El contenido seguirá el siguiente formato: <i>\\servidor\carpeta_compartida\nombre_usuario</i>.</p>
+
+<img src="Assets/perfil1.jpg" alt="perfil" />
+
+<p>Observa que, en lugar de utilizar el nombre de usuario (en nuestro caso, Alejandro OC), hemos utilizado la variable de sistema %username%. En realidad, el resultado es el mismo, pero será muy útil cuando cambiemos el perfil de varios usuarios al mismo tiempo.</p>
+
+<h3>Crear en el servidor la carpeta compartida</h3>
+
+<p>Los pasos que debemos seguir para implementar esta característica comienzan por crear una carpeta en el disco duro del servidor, que actuará como contenedor de las carpetas personales de los usuarios, compartirla y asignarle los permisos correctos. Creamos en la unidad C una carpeta, que la llamaremos 'Personal', luego le pulsaremos en propiedades y en la sección de compartir. En ella, hacemos clic sobre Uso compartido avanzado,  aquí, tendremos que activar la opción Compartir esta carpeta para que se habiliten el resto de las opciones.
+
+De forma predeterminada, el nombre que se utilizará para etiquetar el recurso compartido coincide con el nombre de la carpeta pero, si queremos, podemos cambiarlo, aunque yo lo dejaré como está.</p>
+
+<p>Otro aspecto a tener en cuenta es que, si queremos que una carpeta compartida no se muestre cuando cualquier otro usuario del sistema obtenga la lista de carpetas compartidas por el servidor, deberemos terminar el texto incluido en el campo Nombre del recurso compartido con un carácter ‘$’. De forma predeterminada, el grupo Todos (es decir, todos los usuarios), tiene permiso de lectura sobre la carpeta que estamos compartiendo. Aunque es prácticamente lo mismo, parece más adecuado que los permisos sobre la carpeta pertenezcan al grupo Usuarios del dominio. Además, este grupo debe tener control total sobre la carpeta, por lo que a continuación procedemos a efectuar los cambios. En este caso hemos eliminado 'Todos'</p>
+
+<img src="Assets/folder.jpg" alt="folder" />
+
+<p>Después, hacemos clic sobre el botón Agregar, para añadir el grupo Usuarios del dominio. Cuando aparezca la ventana Seleccionar Usuarios, Equipos o Grupos, podríamos escribir directamente el nombre del grupo Usuarios del dominio, pero en lugar de eso, lo buscaremos, para asegurarnos de que no cometemos errores al escribirlo. Hacemos clic sobre el botón Avanzadas, veremos que la ventana Seleccionar Usuarios, Equipos o Grupos, aumenta de tamaño e incluye más opciones. Ahora nos dirigimos al cuadro de texto que hay junto a Empieza con y escribimos el principio del nombre del grupo que estamos buscando.</p>
+
+<img src="Assets/folder1.jpg" alt="folder" />
+
+<p>Aceptamos los cambios.</p>
+
+
+<h3>Configurar una carpeta compartida en la cuenta de cada usuario</h3>
+
+
+<p>Una vez creada la carpeta, tendremos que configurar las cuentas de usuario para que la utilicen como lugar de almacenamiento en red. Esta tarea la completaremos desde la herramienta Usuarios y equipos de Active Directory. Accedemos a Usuarios y equipos de Active Directory, una vez abierta la herramienta, nos dirigimos al lugar donde se encuentran las cuentas de usuario sobre las que queremos actuar y las seleccionamos. Recuerda que podemos utilizar las teclas Mayúsculas (Shift) y Control (Ctrl) combinadas con el clic del ratón para realizar selecciones múltiples.
+
+Una vez seleccionadas las cuentas, hacemos clic sobre cualquiera de ellas con el botón derecho del ratón.</p>
+
+
+<img src="Assets/UAD.jpg" alt="folder" />
+
+<p>En esta ventana, elegiremos la solapa Perfil y, dentro de ella, activaremos la opción Carpeta particular. Podríamos hacer que la carpeta compartida se mostrara como una carpeta más dentro del árbol de directorios del cliente. En ese caso, elegiríamos la opción Ruta de acceso local y elegiríamos el lugar adecuado.</p>
+
+<p>Sin embargo, pienso que queda más claro si el cliente percibe el almacenamiento compartido en el servidor como una unidad de almacenamiento en red, independiente de su árbol de directorios local. Por este motivo, haremos clic sobre Conectar y elegiremos una letra de unidad en la lista. En este caso, dejaremos el valor predeterminado (Z:).
+
+Lo siguiente será indicar el nombre y la ubicación de la carpeta compartida. Esto se hace siguiendo la siguiente sintaxis:
+
+<b>\\servidor\carpeta_contenedora\carpeta_compartida</b></p>
+
+</main> 
+<span class="ir-arriba icon-arrow-up"></span>
+</body>
+</html>

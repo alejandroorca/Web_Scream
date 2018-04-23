@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Administración de dominios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="fonts.css"/>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+  
+  $(document).ready(function(){
+ 
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+ 
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+ 
+});
+</script>    
+</head>
+<body>
+<main>	
+<nav>
+							<ul>
+								<li><a href="index.html">Principal</a></li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">A. Administración de dominios</a>
+                                <div class="dropdown-content">
+                                <a href="a1.html">a.1) Implementación de dominios</a>
+								<a href="a2.html">a.2) Administración de cuentas de usuarios y de equipos</a>
+								<a href="a3.html">a.3) Centralizar información</a>
+								<a href="a4.html">a.4) Creación y administración de grupos de seguridad</a>
+								<a href="a5.html">a.5) Creación de plantillas que facilitan la administración de usuarios</a>
+								<a href="a6.html">a.6) Organización de los objetos del dominio</a>
+								<a href="a7.html">a.7) Utilización de máquinas virtuales para la administración de dominios</a>
+								<a href="a8.html">a.8) Documentación de la estructura del dominio y la tareas realizadas</a>
+                                </div>
+                                </li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">B. Administración del acceso al dominio</a>
+                                <div class="dropdown-content">
+                                <a href="b1.html">b.1) Equipos al dominio</a>
+                                <a href="b2.html">b.2) Bloqueos de acceso no autorizados al dominio</a>
+                                <a href="b3.html">b.3) Administración de recursos locales y de red</a>
+                                <a href="b4.html">b.4) Se han tenido en cuenta los requerimientos de seguridad</a>
+                                <a href="b5.html">b.5) Implementación y verificación de directivas de grupos</a>
+                                <a href="b6.html">b.6) Asignación de directivas al grupo</a>
+                                <a href="b7.html">b.7) Documentación de incidencias y de tareas</a>
+								</div>
+                                </li>
+							</ul>
+						</nav>
+<h1>b.5) Implementación y verificación de directivas de grupos</h1>
+<h2>¿Qué es una directiva de grupo?</h2>
+<p> Directiva de Grupo es una característica de Windows NT, familia de Sistemas Operativos. Directiva de grupo es un conjunto de reglas que controlan el entorno de trabajo de cuentas de usuario y cuentas de equipo. Directiva de grupo proporciona la gestión centralizada y configuración de sistemas operativos, aplicaciones y configuración de los usuarios en un entorno de Active Directory. En otras palabras, la Directiva de Grupo, en parte, controla lo que los usuarios pueden y no pueden hacer en un sistema informático. Aunque la Directiva de Grupo es más frecuente en el uso de entornos empresariales, es también común en las escuelas, las pequeñas empresas y otros tipos de organizaciones más pequeñas. Directiva de grupo a menudo se utiliza para restringir ciertas acciones que pueden presentar riesgos de seguridad potenciales, por ejemplo: Bloquear el acceso al Administrador de tareas, restringir el acceso a determinadas carpetas, deshabilitar la descarga de archivos ejecutables, etc.</p>
+
+<h2>Creación de una GPO</h2>
+<p>Dentro de Administrador del servidor seleccionar Herramientas y Administración de directivas de grupo, aparecen las GPO del dominio, para crear una nueva GPO desde cero, pulsar en Objetos de directiva de grupo con el botón derecho y seleccionar Nuevo.</p>
+<img src="Assets/directivas.jpg" alt="cliente" /> 
+<p>No seleccionar ninguna GPO de origen y pulsamos <b>Aceptar</b>, pulsamos sobre la nueva GPO con el botón derecho y seleccionar <b>Editar</b>.</p>
+<img src="Assets/directivas1.jpg" alt="cliente" /> 
+<p>Una vez dentro de la edición de la GPO hay que asignar la unidad de red que los usuarios deben montar, siguiendo las políticas adecuadas. Navegar a <b>Configuración del usuario &gt Preferencias &gt Configuración de Windows &gt Asignaciones de Unidades</b> y editar la unidad que viene asignada en la GPO pulsando sobre ella con el botón derecho y seleccionar Propiedades</p>
+<img src="Assets/directivas2.jpg" alt="cliente" />
+<p>Seleccionar la ubicación, el nombre con el que se quiere mostrar la unidad, la letra que se le asignará y el usuario que se conectará.</p>
+<h2>Activar una GPO</h2>
+<p>Para activar una GPO se debe seleccionar la OU, dominio, sitio o equipo local donde se quiere activar la GPO.</p>
+
+<p>Un usuario, estará en un equipo local que a su vez se ubica en un sitio, y este sitio pertenecerá a un dominio que será miembro de una OU. Se puede dar la situación en la que en un equipo local se aplique una GPO, en el sitio otra, y en el dominio y la OU otras, respectivamente. Cuando se den casos así, las políticas se aplicarán según unas prioridades que atienden a una serie de reglas que se describen a continuación.</p>
+
+<p>En las GPO, las políticas asignadas a una OU prevalecen sobre las del dominio, que a su vez prevalecen sobre las del sitio y estas, sobre las del equipo local.  Esto no quiere decir que las políticas se anulen unas a otras, sino que siempre se suman y tan solo se anulan en caso de contradecirse entre ellas.</p>
+<p>Se aplica el siguiente diagrama de flujo para leer las GPO y se comprueba si se contradicen o no, sumando las coherencias y prevaleciendo las más restrictivas.</p>
+<img src="Assets/diagramagpo.png" alt="cliente" />
+<p>Cada organización debe crear las GPO que más se acerquen a sus necesidades. Para añadir la GPO, por ejemplo al dominio, hacer click con el botón derecho y seleccionar <b>Vincular GPO existente…</b></p>
+<img src="Assets/directivas3.jpg" alt="cliente" />
+<p>Y por ultimo personalizar a que usuarios o grupos se aplicará la política, con esto quedaría dada de alta la GPO y creada a nuestro antojo.</p>
+<img src="Assets/directivas4.jpg" alt="cliente" />
+<p>Nos dirigimos al equipo del cliente y actualizamos con el comando <b>gpupdate /force</b>, una vez ya actualizado para ver las GPO ponemos el sigueinte comando <b>gpresult /r</b>.</p>
+<img src="Assets/directivas5.jpg" alt="cliente" />
+</main> 
+<span class="ir-arriba icon-arrow-up"></span>
+</body>
+</html>

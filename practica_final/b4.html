@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Administración de dominios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="fonts.css"/>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+  
+  $(document).ready(function(){
+ 
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+ 
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+ 
+});
+</script>    
+</head>
+<body>
+<main>	
+<nav>
+							<ul>
+								<li><a href="index.html">Principal</a></li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">A. Administración de dominios</a>
+                                <div class="dropdown-content">
+                                <a href="a1.html">a.1) Implementación de dominios</a>
+								<a href="a2.html">a.2) Administración de cuentas de usuarios y de equipos</a>
+								<a href="a3.html">a.3) Centralizar información</a>
+								<a href="a4.html">a.4) Creación y administración de grupos de seguridad</a>
+								<a href="a5.html">a.5) Creación de plantillas que facilitan la administración de usuarios</a>
+								<a href="a6.html">a.6) Organización de los objetos del dominio</a>
+								<a href="a7.html">a.7) Utilización de máquinas virtuales para la administración de dominios</a>
+								<a href="a8.html">a.8) Documentación de la estructura del dominio y la tareas realizadas</a>
+                                </div>
+                                </li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">B. Administración del acceso al dominio</a>
+                                <div class="dropdown-content">
+                                <a href="b1.html">b.1) Equipos al dominio</a>
+                                <a href="b2.html">b.2) Bloqueos de acceso no autorizados al dominio</a>
+                                <a href="b3.html">b.3) Administración de recursos locales y de red</a>
+                                <a href="b4.html">b.4) Se han tenido en cuenta los requerimientos de seguridad</a>
+                                <a href="b5.html">b.5) Implementación y verificación de directivas de grupos</a>
+                                <a href="b6.html">b.6) Asignación de directivas al grupo</a>
+                                <a href="b7.html">b.7) Documentación de incidencias y de tareas</a>
+								</div>
+                                </li>
+							</ul>
+						</nav>
+<h1>b.4) Se han tenido en cuenta los requerimientos de seguridad</h1>
+<p>Como hemos dicho en secciones anteriores, existen varios métodos de seguridad, actualizar servidor, copias de seguridad, entre otros.</p>
+<h2>Actualizar servidor</h2>
+<p>Para actualizar el dominio, nos dirigimos a <b>Windows Update</b> e instalamos las nuevas actualizaciones disponible</p>
+<img src="Assets/seguro.jpg" alt="cliente" /> 
+<h2>Copias de seguridad</h2>
+<p>PASOS PREVIOS</p>
+<p>Deberemos de tener instalado el rol de las copias de seguridad en el dominio, para ello nos dirigimos a añadir roles e instalamos esa característica.</p>
+<p>Para realizar las copias de seguridad nos dirigiremos a <b>Administrador del servidor &gt Herramientas</b> y clickeamos en <b>Copias de seguridad de Windows Server</b>, le hacemos click en <b>Hacer una copia de seguridad una vez...</b>, se nos abrirá una ventana nueva y elegimos el checkbox de <b>Opciones diferentes</b> y le damos a siguiente, tenemos dos opciones, de hacer una copia al servidor entero o personalizada, se recomienda completa. En este caso hemos marcado completa, le damos a siguiente y elegimos si lo queremos en <b>Unidades locales o en carpeta compartida remota</b>, en este caso hemos seleccionado la unidad local <b>E</b>.</p>
+<img src="Assets/seguro1.jpg" alt="cliente" /> 
+<p>Aceptamos y realizamos la copia de seguridad (tarda varios minutos, eso dependerá de los recursos de tu maquina), una vez ya creado le damos a <b>Cerrar</b>, para cargar una copia de seguridad le hacemos click en <b>Recuperar</b>, nos preguntará si se encuentra en el servidor o en otro almacenamiento, este caso lo tenemos en el servidor. Automáticamente nos buscará la última copia de seguridad realizada.</p>
+<img src="Assets/seguro3.jpg" alt="cliente" />
+<p>Seleccionamos archivos y carpetas, le damos a siguiente, seleccionamos elementos, ubicación y comenzamos la copia de seguridad.</p> 
+<h2>Evitar ransomware</h2>
+<p>PASOS PREVIOS</p>
+<p>Tenemos que añadir la función <b>Administrador de recursos del servidor de archivos</b>.</p>
+<p>Le pasaremos un script en el cual se añadirán nuevas extensiones en las cuales bloquearemos ya que son muy usadas por los ransomware, haz click <a href="https://raw.githubusercontent.com/alejandroorca/alejandroorca.github.io/master/dominios/script_antiransomware.ps1">aquí</a> para obtener el código del script. Una vez que lo tengamos lo ejecutamos con <b>PowerShell</b>.</p>
+<img src="Assets/seguro4.jpg" alt="cliente" />
+<p>Nos dirigimos a <b>Administrador del servidor</b> y a <b>Administrador de recursos del servidor de archivos</b>, desplegamos <b>Adminitración del filtrado de archivos</b> y seleccionamos <b>Grupos de archivos</b> y abajo del todo aparecerá el grupo que hemos creado.</p>
+<img src="Assets/seguro5.jpg" alt="cliente" />
+<p>Creamos una plantilla de filtro de archivos, para crearlo le hacemos click derecho y en crear nueva plantilla, le asignamos un nombre y seleccionamos un grupo de archivos que el cual seleccionaremos es el que hemos creado nuevo <b>"ransomware_extensions"</b>, una vez dado nos vamos a la sección de mensaje de correo electrónico, aquí podemos habilitar de que nos envíen un mensaje a nuestro correo cuando un usuario ha utilizado un archivo no autorizado, también podemos crear una advertencia en el registro y que se genere un comando al ver que se está haciendo uso de un ransomware e incluso hacer un informe de todo, la recomendación que doy es habilitar todas estas funciones.</p>
+<img src="Assets/seguro6.jpg" alt="cliente" />
+<p>Nos dirigimos a <b>Filtros de archivos</b>, creamos un filtro nuevo y elegimos una carpeta en el cual lo aplicaremos y marcamos el primer checkbox y en el menú desplegable marcamos "ransomware" y creamos.</p>
+<img src="Assets/seguro7.jpg" alt="cliente" />
+<p>Con todo esto podemos evitar un ataque <b>RANSOMWARE</b></p>
+<h2>Prohibir instalación de Software en equipos del dominio</h2>
+<p>Para ello nos dirigimos a <b>Administración de directivas de grupo</b>, nos dirigimos a nuestra unidad organizativa y creamos una nueva unidad organizativa, una vez creada la editamos haciendo click derecho sobre ella, se nos abrirá una nueva ventana en la cual seguiremos este orden de despliegue <b>Directivas &gt Plantillas administrativas &gt Componentes de windows</b> y hacemos click en <b>Windows Installer</b>.</p>
+<img src="Assets/seguro8.jpg" alt="cliente" />
+<p>Le hacemos doble click en <b>Desactivar Windows Installer</b>, se nos abrirá una nueva ventana, en la cual marcaremos <i>Habilitada</i>, y le marcamos la opción <b>Siempre</b> y le damos a <b>Aceptar</b>.</p>
+<img src="Assets/seguro9.jpg" alt="cliente" />
+<p>Una vez realizado esto debemos de ir al ordenador del cliente y ejecutar en Powershell el comando <b>gpupdate /force</b>, al ejecutar dicho comando lo que hacemos es actualizar el GPO.</p>
+<img src="Assets/seguro10.jpg" alt="cliente" />
+<p>Y con esto ya el usuario no puede instalar ningún software, salvo que lo haga el administrador</p>
+</main>  
+<span class="ir-arriba icon-arrow-up"></span>
+</body>
+</html>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Administración de dominios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="fonts.css"/>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+  
+  $(document).ready(function(){
+ 
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+ 
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+ 
+});
+</script>    
+</head>
+<body>
+<main>	
+<nav>
+							<ul>
+								<li><a href="index.html">Principal</a></li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">A. Administración de dominios</a>
+                                <div class="dropdown-content">
+                                <a href="a1.html">a.1) Implementación de dominios</a>
+								<a href="a2.html">a.2) Administración de cuentas de usuarios y de equipos</a>
+								<a href="a3.html">a.3) Centralizar información</a>
+								<a href="a4.html">a.4) Creación y administración de grupos de seguridad</a>
+								<a href="a5.html">a.5) Creación de plantillas que facilitan la administración de usuarios</a>
+								<a href="a6.html">a.6) Organización de los objetos del dominio</a>
+								<a href="a7.html">a.7) Utilización de máquinas virtuales para la administración de dominios</a>
+								<a href="a8.html">a.8) Documentación de la estructura del dominio y la tareas realizadas</a>
+                                </div>
+                                </li>
+								<li class="dropdown">
+                                <a href="javascript:void(0)" class="dropbtn">B. Administración del acceso al dominio</a>
+                                <div class="dropdown-content">
+                                <a href="b1.html">b.1) Equipos al dominio</a>
+                                <a href="b2.html">b.2) Bloqueos de acceso no autorizados al dominio</a>
+                                <a href="b3.html">b.3) Administración de recursos locales y de red</a>
+                                <a href="b4.html">b.4) Se han tenido en cuenta los requerimientos de seguridad</a>
+                                <a href="b5.html">b.5) Implementación y verificación de directivas de grupos</a>
+                                <a href="b6.html">b.6) Asignación de directivas al grupo</a>
+                                <a href="b7.html">b.7) Documentación de incidencias y de tareas</a>
+								</div>
+                                </li>
+							</ul>
+						</nav>
+<h1>b.3) Administración de recursos locales y de red</h1>
+<p>Nos dirigimos a <b>Administrador del servidor &gt Servicios de archivos y de almacenamiento &gt Recursos compartidos</b>, una vez allí podemos agregar un nuevo recurso, modificarlo o eliminarlo.</p>
+<h2>Añadir un recurso</h2>
+<p>Hacemos click en <i>TAREAS</i> y luego en <i>Nuevo recurso compartido...</i>, nos aparecerá una nueva ventana, elegimos el tipo de recurso que vamos a añadir y luego le damos a siguiente, al darle siguiente nos preguntará la localización del recurso, para añadirla le damos a <b>Escriba una ruta de acceso personalizada</b> y le damos luego en <i>Examinar...</i> y elegimos la carpeta que queramos añadir.</p>
+<img src="Assets/recurso.jpg" alt="cliente" />   
+<p>Presionamos <i>Siguiente</i> y nos solicitará un nombre para el recurso, descripción y ruta remota, una vez configurado esa parte le damos a siguiente y nos pedirá los parámetros de configuración de recurso compartido, es recomendable marcar los tres checkboxs.</p>
+<img src="Assets/recurso2.jpg" alt="cliente" /> 
+<p>Le presionamos a <i>Siguiente</i> y nos preguntará los permisos, en este caso añadiremos al usuario <i>Alejandro</i>, para añadirlo le damos en <b>Personalizar permisos...</b>, luego en <b>agregar</b> y en <b>Seleccionar una entidad de seguridad</b>, escribimos el nombre y le damos a <b>comprobar nombres</b> y seleccionamos el usuario</p>
+<img src="Assets/recurso3.jpg" alt="cliente" /> 
+<p>Aceptamos y se habilitará los checksboxs, que previamente estaban bloqueados, en este caso le daremos todos los permisos, aceptamos y aplicamos. Nuevamente le damos a siguiente. Nos hará un breve resumen de lo que hemos hecho.</p>
+<img src="Assets/recurso4.jpg" alt="cliente" /> 
+<h2>Editar un recurso</h2>
+<p>Para editar un recurso le hacemos click derecho en el recuros y <b>propiedades</b>, se nos abrirá una ventana con tres secciones <b>General, Permisos y Configuración</b>, vamos a añadir a <b>Alejandro</b> a la parte de compartir para que pueda acceder a la carpeta a través de la red, para ello le damos en <i>Personalizar permisos...</i> y luego en <b>Compartir</b>, clickeamos en <i>agregar, seleccionar una entidad de seguridad</i>, introducimos el nombre y comprobamos.</p>
+<img src="Assets/recurso5.jpg" alt="cliente" /> 
+<p>Al aceptar se habilitará las opciones, en este caso le ponemos <b>control total</b> y aceptamos.</p>
+<h3>IMPORTANTE</h3>
+<p><i><b>En el hipotético caso de que hubieramos puesto en compartir al usuario Alejandro con sólo lectura y en la sección de permisos "TOTAL", el dominio coge el más restringido que sería "LECTURA", aunque en la sección de compartir esté el grupo "Todos" con los permisos al máximo.</b></i></p>
+<h2>Eliminación de recurso</h2>
+<p>Para quitar un recurso es tan simple como de darle con click derecho al recurso y lo detenemos</p>
+<h2>Comprobaciones desde el ordenador cliente</h2>
+<p>Probaremos que tenemos acceso a la carpeta y en ella podemos crear archivos, modificarlos o eliminarlos, al usuario <b>Alejandro</b> se le ha asignado los permisos totales tanto en <b>permisos</b> como en <b>compartir</b></p>
+<img src="Assets/recurso6.jpg" alt="cliente" /> 
+<img src="Assets/recurso7.jpg" alt="cliente1" /> 
+</main> 
+<span class="ir-arriba icon-arrow-up"></span>
+</body>
+</html>
