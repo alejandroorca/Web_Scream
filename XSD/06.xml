@@ -6,21 +6,13 @@
 		<Album>Dani Martin</Album>
 	<Age>2013</Age>
 	<Duracion>00:04:25</Duracion>
-	<Disponibilidad>true</Disponibilidad>  
+	<Disponibilidad>true</Disponibilidad>
 </CD>
-  <Size>
-    <Megabytes>5</Megabytes>
-  </Size>
 <CD numero="2">
 	<Titulo>Animals</Titulo>
 	<Artista>Maroon V</Artista>
-  <Album>V</Album>
 	<Age>2017</Age>
-  <Duracion>00:04:00</Duracion>
+	<Album>V</Album>
 	<Disponibilidad>true</Disponibilidad>
-  <Modo_protegido>Si</Modo_protegido>
 </CD>
-   <Size>
-    <Kilobytes>5</Kilobytes>
-  </Size>
 </Catalogo>
