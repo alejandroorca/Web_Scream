@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type='text/xsl' href='06.xsl'?>
+<Videojuegos>
+<Videojuego id='1'>
+	<Titulo>Uncharted 1</Titulo>
+	<Genero>Acción y aventuras</Genero>
+	<Plataforma>PlayStation 3</Plataforma>
+</Videojuego>
+<Videojuego id='2'>
+		<Titulo>Tomb Raider</Titulo>
+	<Genero>Acción y aventuras</Genero>
+	<Plataforma>PlayStation 3/XBOX 360/PC/PS4/XBOX ONE</Plataforma>
+</Videojuego>
+</Videojuegos>

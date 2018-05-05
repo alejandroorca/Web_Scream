@@ -15,7 +15,7 @@
           <th>Apellidos</th>
           <th>Apodo</th>
           <th>Nacimiento</th>
-          <th>Puntuaje</th>
+          <th>Points</th>
         </tr>
         <xsl:for-each select='students/student'>
           <tr>

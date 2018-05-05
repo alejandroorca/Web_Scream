@@ -9,9 +9,9 @@
     </head>
     <body>
        <xsl:for-each select='Murcielagos/Murcielago'>
-      <header></header>
+      <header>
       <h1>Murciélago Yoda</h1>
-<p style='color: red;'><xsl:value-of select='Informacion'/></td></p>
+<p style='color: red;'><xsl:value-of select='Informacion'/></p>
       </header>
       <table style='border: 1px solid;'>
         <tr style='background-color: #9acd32;'>
@@ -28,10 +28,10 @@
             <td><xsl:value-of select='Orden'/></td>
             <td><xsl:value-of select='Familia'/></td>
           </tr>
+           </table>
           <p>Imagen del murciélago Yoda</p>
-          <img src="<xsl:value-of select='Foto'/></td>" alt="photo" />
+       <img><xsl:attribute name="src"><xsl:value-of select="Foto" /></xsl:attribute></img>
         </xsl:for-each>
-      </table>
     </body>
   </html>
 </xsl:template>

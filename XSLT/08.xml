@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type='text/xsl' href='08.xsl'?>
+<Peliculas>
+	<Pelicula id='1'>
+		<Titulo>Vengadores: Infinity War</Titulo>
+		<Informacion>Avengers: Infinity War​ es una película estadounidense de superhéroes de 2018, basada en el equipo de superhéroes de Marvel Comics, los Vengadores, producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures. </Informacion>
+	<Points>4.4</Points>
+	<Duracion>160</Duracion>
+	<Foto>https://images4.alphacoders.com/909/thumb-350-909185.jpg</Foto>
+	</Pelicula>
+	<Pelicula id='2'>
+		<Titulo>12 valientes</Titulo>
+		<Informacion>Al poco de producirse el ataque terrorista del 11 de septiembre, un comando de las fuerzas especiales estadounidenses llega a Afganistán para combatir contra los talibanes y Al-Qaeda en una lucha sin piedad en la que les superan en número. </Informacion>
+	<Points>3.3</Points>
+	<Duracion>131</Duracion>
+	<Foto>https://cartelescine.files.wordpress.com/2018/01/12-valientes.jpg?w=640</Foto>
+	</Pelicula>
+		<Pelicula id='3'>
+		<Titulo>Super Troopers 2</Titulo>
+		<Informacion>Los desastrosos policías reciben otra oportunidad patrullando las carreteras fronterizas cuando se produce un litigio entre los Estados Unidos y Canadá. Por supuesto, su incompetencia solo logrará enredar más la situación.</Informacion>
+	<Points>3</Points>
+	<Duracion>100</Duracion>
+	<Foto>https://upload.wikimedia.org/wikipedia/en/3/30/Super_Troopers_2_poster.png</Foto>
+	</Pelicula>
+	<Pelicula id='4'>
+		<Titulo>Dragon Ball Evolution</Titulo>
+		<Informacion>Un joven guerrero debe proteger la tierra del vengativo Lord Piccollo, evitando que las siete esferas místicas caigan en sus manos.</Informacion>
+	<Points>2.6</Points>
+	<Duracion>100</Duracion>
+	<Foto>http://filmfilicos.com/wp-content/uploads/2014/12/dragonball-evolution.jpg</Foto>
+	</Pelicula>
+</Peliculas>
