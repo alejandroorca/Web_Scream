@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type='text/xsl' href='04.xsl'?>
+<Murcielagos>
+<Murcielago>
+<Reino>Animalia</Reino>
+<Filo>Chordata</Filo>
+<Clase>Mammalia</Clase>
+<Orden>Chiroptera</Orden>
+<Familia>Pteropodidae</Familia>
+<Informacion>El murciélago yoda (Nyctimene papuanus), es una especie endémica de Papúa Nueva Guinea. En la actualidad es una especie en investigación, mide 40 cm y al abrir sus alas tiene una envergadura de 1,5 m y su peso sobrepasa el kilo. Este mamífero volador a diferencia de la mayoría de especies de murciélagos que se ubican mediante la ecolocación, este utiliza sus grandes ojos para moverse y conseguir su alimento.
+
+Se apoda por su parecido a Yoda, uno de los principales protagonistas de la saga de películas Star Wars.</Informacion>
+<Alimentacion>Su dieta se basa principalmente en frutas y además cumple un papel crucial en el ecosistema donde habita, ya que esparce las semillas por los bosques tropicales</Alimentacion>
+<Foto>http://i29.servimg.com/u/f29/15/49/01/88/12863810.jpg</Foto>
+</Murcielago>
+</Murcielagos>

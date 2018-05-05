@@ -3,7 +3,7 @@
  <xs:element name='Catalogo'>
   <xs:complexType>
       <xs:sequence>
-        <xs:element name='CD' type='cd_type' minOccurs='1' maxOccurs='2'/>                                                                                                           
+        <xs:element name='CD' type='cd_type' minOccurs='1' maxOccurs='2'/>           
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -15,16 +15,14 @@
       <xs:element name='Age' type="xs:integer"/>
       <xs:element name='Duracion' type='xs:time' />
       <xs:element name='Disponibilidad' type='xs:boolean'/>
-      <xs:element name='size_type'/>
+      <xs:element name='Espacio' type='size_type'/>
       </xs:all>
     <xs:attribute name="numero" type="xs:integer" use="required"/>
   </xs:complexType>
-   <xs:element name='Size' type="size_type">
-    <xs:complexType>
+    <xs:complexType name='size_type'>
       <xs:choice>
-    <xs:element name='Megabytes' type='xs:integer'/>
-      <xs:element name='Kilobytes' type="xs:integer"/>
-         </xs:choice>
+        <xs:element name='Megabytes' type='xs:integer'/>
+        <xs:element name='Kilobytes' type="xs:integer"/>
+      </xs:choice>
     </xs:complexType>
-     </xs:element>
 </xs:schema>

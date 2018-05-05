@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type='text/xsl' href='03.xsl'?>
+<Camaleones>
+	<Camaleon id = '01'>
+		<Genero>Archaius</Genero>
+		<Reino>Animalia</Reino>
+		<Filo>Chordata</Filo>
+        <Clase>Sauropsida</Clase>
+        <Orden>Squamata</Orden>
+	</Camaleon>
+	<Camaleon id = '02'>
+		<Genero>Chamaeleonidae</Genero>
+		<Reino>Animalia</Reino>
+		<Filo>Chordata</Filo>
+        <Clase>Sauropsida</Clase>
+        <Orden>Squamata</Orden>
+	</Camaleon>
+</Camaleones>
