@@ -2,7 +2,9 @@
 <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
 	     <xs:simpleType name="Titulo_type">
       <xs:restriction base="xs:string">
-        <xs:pattern value="[A-Za-z]{4}"/>
+        <xs:pattern value="[A-Za-z]"/>
+        <xs:minLength value="5"/>
+      <xs:maxLength value="8"/>
       </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="Age_type">

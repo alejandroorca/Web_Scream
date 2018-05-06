@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- definition of simple elements -->
+
+<xs:element name='Padre' type="xs:string"/>
+<xs:element name='Madre' type="xs:string"/>
+<xs:element name='Hijo' type="xs:string"/>
+<xs:element name="Father" substitutionGroup="Padre"/>
+<xs:element name="Mother" substitutionGroup="Madre"/>
+<xs:element name="Son" substitutionGroup="Hijo"/>
+
+
+<!-- atributos -->
+<xs:attribute name="id" type="xs:integer"/>
+
+  
+<!-- Complejos -->
+<xs:element name="Familia">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref='Padre'/>
+      <xs:element ref='Madre'/>
+      <xs:element ref='Hijo'/>
+      <xs:any minOccurs="0"/>
+    </xs:sequence>
+      <xs:anyAttribute/>
+</xs:complexType>
+
+</xs:element>
+  
+  <xs:element name="Dinero">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Money" type="xs:integer"
+      maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
+
+</xs:schema>

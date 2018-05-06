@@ -1,0 +1,92 @@
+xs:string
+xs:decimal
+xs:integer
+xs:boolean
+xs:date
+xs:time
+
+restricciones
+
+<xs:minInclusive value="0"/>
+      <xs:maxInclusive value="120"/>
+
+      maximo y minimo de numeros a poner edad
+
+      <xs:enumeration value="Audi"/>
+      <xs:enumeration value="Golf"/>
+      <xs:enumeration value="BMW"/>
+
+      <xs:minLength value="5"/>
+      <xs:maxLength value="8"/>
+
+      <xs:whiteSpace value="collapse"/>
+
+      <xs:pattern value="blue|brown|green|grey"/>
+
+      <xs:any minOccurs="2" maxOccurs="5"/>
+
+      <xs:length value="8"/>
+
+
+tipo texto complejo
+<xs:element name="somename">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:restriction base="basetype">
+        ....
+        ....
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+
+tipo mixto
+<xs:element name="letter">
+  <xs:complexType mixed="true">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="orderid" type="xs:positiveInteger"/>
+      <xs:element name="shipdate" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
+
+
+
+      xsl plantillas
+
+      <?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+  <body>
+  <h2>My CD Collection</h2>
+  <xsl:apply-templates/>
+  </body>
+  </html>
+</xsl:template>
+
+<xsl:template match="cd">
+  <p>
+  <xsl:apply-templates select="title"/>
+  <xsl:apply-templates select="artist"/>
+  </p>
+</xsl:template>
+
+<xsl:template match="title">
+  Title: <span style="color:#ff0000">
+  <xsl:value-of select="."/></span>
+  <br />
+</xsl:template>
+
+<xsl:template match="artist">
+  Artist: <span style="color:#00ff00">
+  <xsl:value-of select="."/></span>
+  <br />
+</xsl:template>
+
+</xsl:stylesheet>

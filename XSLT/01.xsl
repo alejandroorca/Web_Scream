@@ -11,6 +11,7 @@
       <h1>Estudiantes</h1>
       <table style='border: 1px solid;'>
         <tr style='background-color: #9acd32;'>
+        	<th>ID</th>
           <th>Nombre</th>
           <th>Apellidos</th>
           <th>Apodo</th>
@@ -19,6 +20,7 @@
         </tr>
         <xsl:for-each select='students/student'>
           <tr>
+          	<td><xsl:value-of select='@id'/></td>
             <td><xsl:value-of select='first_name'/></td>
             <td><xsl:value-of select='last_name'/></td>
             <td><xsl:value-of select='nickname'/></td>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+	<Familia id='01'>
+		<Padre>Julio</Padre>
+		<Mother>Carol</Mother>
+		<Hijo>Lucas</Hijo>
+      <Dinero>
+        <Money>500</Money>
+      </Dinero>
+	</Familia>
+
