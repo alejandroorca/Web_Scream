@@ -53,6 +53,55 @@ tipo mixto
 
 
 
+<p:persona
+
+     xmlns:p="http://www.prueba.es/persona"  
+
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+     xsi:schemaLocation= "http://www.prueba.es/persona people.xsd"
+
+     >
+
+    <p:nombre>John</p:nombre>
+
+    <p:direccion>John</p:direccion>
+
+</p:persona>
+
+
+El documento XSD que continue el espacio de nombres es people.xsd
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+
+targetNamespace="http://www.prueba.es/persona" 
+elementFormDefault="qualified"             
+attributeFormDefault="qualified">
+
+  <xs:element name="persona">
+
+    <xs:complexType>
+
+      <xs:sequence>
+
+        <xs:element name="nombre" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+
+        <xs:element name="direccion" type="xs:string" minOccurs="0"
+             maxOccurs="unbounded"/>
+
+      </xs:sequence>
+
+    </xs:complexType>
+
+  </xs:element>
+
+</xs:schema>
+
+
+
+
 
 
       xsl plantillas
