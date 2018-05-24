@@ -100,7 +100,10 @@ attributeFormDefault="qualified">
 </xs:schema>
 
 
-
+caracteres reservados
+menor que &lt;
+mayor que &gt;
+igual =
 
 
 
